@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 56" role="img" aria-label="AdFyrr — Fuel Your Growth">
+  <defs>
+    <linearGradient id="lf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF4D8D"/><stop offset=".4" stop-color="#E0218A"/>
+      <stop offset=".75" stop-color="#A020F0"/><stop offset="1" stop-color="#7B2FF7"/>
+    </linearGradient>
+  </defs>
+  <path d="M26 6 C 21 18 12 22 12 34 C 12 45 18 52 26 54 C 34 52 40 45 40 34 C 40 26 35 21 32 16 C 31 22 28 21 29 13 C 29 10 28 8 26 6 Z" fill="url(#lf)"/>
+  <path d="M26 27 C 23 32 21 35 21 41 C 21 47 24 51 27 53 C 31 50 33 46 32 41 C 31 37 29 35 28 32 C 27 35 25 34 26 27 Z" fill="#fff" opacity=".34"/>
+  <text x="54" y="38" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="38" letter-spacing="-1.5" fill="#0A0A0B">AdFyrr</text>
+  <text x="56" y="51" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="8.5" letter-spacing="2.8" fill="#0A0A0B">FUEL YOUR GROWTH</text>
+</svg>
