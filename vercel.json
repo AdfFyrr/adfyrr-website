@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/access",
+      "destination": "https://adfyrr-portal.vercel.app/access"
+    },
+    {
+      "source": "/access/:path*",
+      "destination": "https://adfyrr-portal.vercel.app/access/:path*"
+    }
+  ]
+}
