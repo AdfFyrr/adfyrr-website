@@ -123,7 +123,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo svg { height: 34px; width: auto; }
+.nav-logo svg, .nav-logo img { height: 40px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 34px; }
 .nav-links a {
   font-weight: 600; font-size: .95rem; color: var(--ink); position: relative;
@@ -306,7 +306,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: #A1A1AA; padding: 72px 0 32px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 40px; }
-.footer-logo svg { height: 32px; margin-bottom: 18px; }
+.footer-logo svg, .footer-logo img { height: 38px; margin-bottom: 18px; }
 .footer-about p { font-size: .94rem; max-width: 300px; line-height: 1.7; }
 .footer h4 { color: #fff; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; font-weight: 700; }
 .footer-col a { display: block; font-size: .94rem; margin-bottom: 12px; transition: color .2s; }
