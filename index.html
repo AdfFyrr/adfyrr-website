@@ -353,6 +353,78 @@
 
   .approve{background:var(--ink);color:var(--yellow);text-align:center;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px}
 
+
+  /* ---------- spend proof panel ---------- */
+  .spendproof{padding:96px 0 0}
+  .sp-panel{position:relative;background:var(--white);border:2px solid var(--ink);border-radius:22px;box-shadow:10px 10px 0 var(--red);overflow:visible}
+  .sp-inner{overflow:hidden;border-radius:20px}
+  .mbp-badge{position:absolute;top:-26px;right:34px;z-index:3;display:inline-flex;align-items:center;gap:10px;
+    background:var(--white);border:2px solid var(--ink);border-radius:12px;padding:12px 18px;
+    font-size:14.5px;font-weight:600;color:var(--mid);box-shadow:4px 4px 0 var(--ink);
+    animation:jingle 3.2s ease-in-out infinite;transform-origin:top center;cursor:default}
+  .mbp-badge:hover{animation-duration:.7s}
+  .mbp-badge svg{width:26px;height:26px;flex:none}
+  .mbp-badge b{color:var(--ink);font-weight:800}
+  @keyframes jingle{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+  .sp-head{display:flex;align-items:center;gap:16px;padding:22px 30px;border-bottom:2px solid var(--ink);background:var(--cream);flex-wrap:wrap}
+  .sp-av{width:46px;height:46px;border-radius:12px;background:var(--red);display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);flex:none}
+  .sp-av svg{width:26px;height:26px}
+  .sp-head h3{font-size:20px;font-weight:800}
+  .sp-head small{display:block;font-family:var(--mono);font-size:11px;color:var(--lt);font-weight:600;letter-spacing:.1em;margin-top:2px}
+  .sp-live{margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;background:var(--white);border:2px solid var(--ink);border-radius:99px;padding:8px 15px}
+  .sp-live i{width:9px;height:9px;border-radius:50%;background:#2E7D32;display:block;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+  .sp-chips{display:flex;gap:10px;padding:20px 30px 0;flex-wrap:wrap}
+  .sp-chips span{font-size:14px;font-weight:700;padding:8px 18px;border-radius:8px;border:2px solid var(--line);color:var(--mid);transition:border-color .2s,transform .2s var(--ease)}
+  .sp-chips span:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .sp-chips .on{background:var(--red);border-color:var(--ink);color:#fff;box-shadow:0 3px 0 var(--red-dk)}
+  .sp-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 30px 6px}
+  @media(max-width:880px){.sp-kpis{grid-template-columns:1fr}}
+  .sp-kpi{border:2px solid var(--ink);border-radius:15px;padding:20px 22px 18px;background:var(--white);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
+  .sp-kpi:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+  .sp-kpi.feat{background:var(--yellow)}
+  .sp-kpi.feat:hover{box-shadow:6px 6px 0 var(--red)}
+  .sp-kpi .lbl{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.13em;color:var(--mid);text-transform:uppercase}
+  .sp-kpi .num{font-family:var(--disp);font-size:clamp(40px,4.4vw,58px);line-height:1;margin:10px 0 10px;font-variant-numeric:tabular-nums}
+  .sp-kpi .num .red{color:var(--red)}
+  .sp-bdg{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:800;padding:5px 11px;border-radius:7px;border:2px solid var(--ink)}
+  .sp-bdg.up{background:#E4F2E5;color:#2E7D32}
+  .sp-bdg.dn{background:var(--red-pale);color:var(--red-dk)}
+  .sp-kpi .sub{font-size:13px;color:var(--mid);font-weight:600;margin-left:8px}
+  .sp-chart{padding:14px 30px 4px}
+  .sp-ct{display:flex;align-items:center;gap:20px;margin-bottom:4px;flex-wrap:wrap}
+  .sp-ct h4{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;color:var(--mid)}
+  .sp-leg{display:flex;gap:20px;margin-left:auto}
+  .sp-leg span{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700}
+  .sp-leg .k{width:28px;height:4px;border-radius:3px;display:block;background:var(--red)}
+  .sp-leg .k.grey{background:none;border-top:3.5px dashed #9A938C;height:0}
+  .sp-plot{width:100%;height:auto;display:block}
+  .spendline{stroke-dasharray:1600;stroke-dashoffset:1600;transition:stroke-dashoffset 2.4s var(--ease) .4s}
+  .rv.in .spendline{stroke-dashoffset:0}
+  .spdots circle{opacity:0;transition:opacity .4s ease}
+  .rv.in .spdots circle{opacity:1}
+  .rv.in .spdots circle:nth-child(1){transition-delay:.5s}.rv.in .spdots circle:nth-child(2){transition-delay:.8s}
+  .rv.in .spdots circle:nth-child(3){transition-delay:1.1s}.rv.in .spdots circle:nth-child(4){transition-delay:1.4s}
+  .rv.in .spdots circle:nth-child(5){transition-delay:1.7s}.rv.in .spdots circle:nth-child(6){transition-delay:2s}
+  .rv.in .spdots circle:nth-child(7){transition-delay:2.3s}.rv.in .spdots circle:nth-child(8){transition-delay:2.6s}
+  .sp-flag{opacity:0;transition:opacity .5s ease 2.7s;transform-origin:center}
+  .rv.in .sp-flag{opacity:1;animation:jingle 2.8s ease-in-out 3.2s infinite}
+  .sp-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 30px;border-top:2px solid var(--ink);background:var(--ink);color:var(--cream);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;flex-wrap:wrap}
+  .sp-foot b{color:var(--yellow)}
+  .sp-foot .wm i{font-style:normal;color:var(--red-lt)}
+  @media(max-width:760px){
+    .spendproof{padding:56px 0 0}
+    .mbp-badge{top:-20px;right:14px;padding:9px 13px;font-size:12.5px}
+    .mbp-badge svg{width:20px;height:20px}
+    .sp-head,.sp-chips,.sp-kpis,.sp-chart,.sp-foot{padding-left:18px;padding-right:18px}
+    .sp-live{margin-left:0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .mbp-badge,.sp-live i,.rv.in .sp-flag{animation:none}
+    .spendline{stroke-dashoffset:0;transition:none}
+    .spdots circle,.sp-flag{opacity:1;transition:none}
+  }
+
   /* ---------- mobile spacing ---------- */
   @media(max-width:760px){
     .sec{padding:60px 0}
@@ -463,6 +535,79 @@
       <div class="metric rv rv-d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></div><div class="num"><span class="num-mono" data-count="3.8" data-dec="1">0</span><span class="suf">x</span></div><div class="lbl">Average blended ROAS</div></div>
       <div class="metric rv rv-d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9.5 9 12 21 14.5 9"/></svg></div><div class="num"><span class="num-mono" data-count="40">0</span><span class="suf">+</span></div><div class="lbl">D2C brands scaled</div></div>
       <div class="metric rv rv-d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M20.8 12.6a8.9 8.9 0 1 1-8.2-8.5"/><path d="m9 11 3 3L21 5"/></svg></div><div class="num"><span class="num-mono" data-count="92">0</span><span class="suf">%</span></div><div class="lbl">Stay past 6 months</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEND PROOF ============ -->
+<section class="spendproof">
+  <div class="wrap">
+    <div class="sp-panel rv">
+      <span class="mbp-badge"><svg viewBox="0 0 24 24" fill="#0081FB"><path d="M6.9 4C3.6 4 1 8.2 1 13.1 1 16 2.4 18 4.8 18c1.7 0 3-1 4.7-3.9l1.6-2.7 1.9 3.3C14.9 17.9 16.5 18 18.2 18c2.4 0 4.8-2 4.8-5.2C23 8 20.4 4 17.2 4c-1.9 0-3.5 1.3-5.2 4.1C10.3 5.3 8.8 4 6.9 4Zm0 2.4c1.1 0 2.1 1 3.6 3.5l-1.8 3C7.3 15.2 6.4 15.7 5.3 15.7c-1.2 0-1.9-1-1.9-2.7 0-3.5 1.7-6.6 3.5-6.6Zm10.2 0c1.9 0 3.5 3 3.5 6.5 0 1.8-.7 2.8-2 2.8-1.1 0-1.7-.5-3.2-2.9l-1.9-3.2c1.5-2.4 2.5-3.2 3.6-3.2Z"/></svg> <span><b>Meta</b> Business Partner</span></span>
+      <div class="sp-inner">
+      <div class="sp-head">
+        <div class="sp-av"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.9 4C3.6 4 1 8.2 1 13.1 1 16 2.4 18 4.8 18c1.7 0 3-1 4.7-3.9l1.6-2.7 1.9 3.3C14.9 17.9 16.5 18 18.2 18c2.4 0 4.8-2 4.8-5.2C23 8 20.4 4 17.2 4c-1.9 0-3.5 1.3-5.2 4.1C10.3 5.3 8.8 4 6.9 4Zm0 2.4c1.1 0 2.1 1 3.6 3.5l-1.8 3C7.3 15.2 6.4 15.7 5.3 15.7c-1.2 0-1.9-1-1.9-2.7 0-3.5 1.7-6.6 3.5-6.6Zm10.2 0c1.9 0 3.5 3 3.5 6.5 0 1.8-.7 2.8-2 2.8-1.1 0-1.7-.5-3.2-2.9l-1.9-3.2c1.5-2.4 2.5-3.2 3.6-3.2Z"/></svg></div>
+        <div>
+          <h3>Meta Ads — client accounts</h3>
+          <small>ALL BRANDS · LAST 24 MONTHS</small>
+        </div>
+        <span class="sp-live"><i></i> LIVE DATA</span>
+      </div>
+      <div class="sp-chips"><span class="on">Meta Spend</span><span>Campaigns</span><span>Ad sets</span><span>Ads</span></div>
+      <div class="sp-kpis">
+        <div class="sp-kpi feat">
+          <div class="lbl">Total spend managed</div>
+          <div class="num">$<span class="num-mono" data-count="1.2" data-dec="1">0.0</span>M<span class="red">+</span></div>
+          <span class="sp-bdg up"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg> growing</span><span class="sub">across 40+ D2C brands</span>
+        </div>
+        <div class="sp-kpi">
+          <div class="lbl">Blended ROAS</div>
+          <div class="num"><span class="red"><span class="num-mono" data-count="3.8" data-dec="1">0.0</span>x</span></div>
+          <span class="sp-bdg up"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg> 62%</span><span class="sub">vs. before AdFyrr</span>
+        </div>
+        <div class="sp-kpi">
+          <div class="lbl">Cost per acquisition</div>
+          <div class="num">CAC <span class="red">↓<span class="num-mono" data-count="38">0</span>%</span></div>
+          <span class="sp-bdg dn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg> lower</span><span class="sub">avg. within 90 days</span>
+        </div>
+      </div>
+      <div class="sp-chart">
+        <div class="sp-ct">
+          <h4>SPEND UNDER MANAGEMENT</h4>
+          <div class="sp-leg"><span><i class="k"></i> with AdFyrr</span><span><i class="k grey"></i> before AdFyrr</span></div>
+        </div>
+        <svg class="sp-plot" viewBox="0 0 1380 320" aria-hidden="true">
+          <g stroke="#E8E5E0" stroke-width="2">
+            <line x1="70" y1="36" x2="1360" y2="36"/><line x1="70" y1="104" x2="1360" y2="104"/>
+            <line x1="70" y1="172" x2="1360" y2="172"/><line x1="70" y1="240" x2="1360" y2="240"/>
+          </g>
+          <g font-family="JetBrains Mono,monospace" font-size="15" fill="#888" font-weight="600">
+            <text x="10" y="42">$90K</text><text x="10" y="110">$60K</text><text x="10" y="178">$30K</text><text x="10" y="246">$10K</text>
+          </g>
+          <path d="M70 238 L255 232 L440 240 L625 234 L810 238 L995 232 L1180 236 L1340 232" fill="none" stroke="#9A938C" stroke-width="4" stroke-dasharray="12 10" stroke-linecap="round"/>
+          <path class="spendline" d="M70 242 L255 216 L440 200 L625 162 L810 136 L995 92 L1180 66 L1340 32" fill="none" stroke="#BB080B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <g class="spdots" fill="#BB080B" stroke="#fff" stroke-width="3">
+            <circle cx="70" cy="242" r="8"/><circle cx="255" cy="216" r="8"/><circle cx="440" cy="200" r="8"/>
+            <circle cx="625" cy="162" r="8"/><circle cx="810" cy="136" r="8"/><circle cx="995" cy="92" r="8"/>
+            <circle cx="1180" cy="66" r="8"/><circle cx="1340" cy="32" r="8"/>
+          </g>
+          <g class="sp-flag">
+            <rect x="1190" y="6" width="132" height="38" rx="9" fill="#F5ED07" stroke="#111" stroke-width="2.5"/>
+            <text x="1256" y="32" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="18" fill="#111">$1.2M+</text>
+          </g>
+          <g font-family="JetBrains Mono,monospace" font-size="15" fill="#888" font-weight="600" text-anchor="middle">
+            <text x="70" y="305">'24 Q3</text><text x="255" y="305">Q4</text><text x="440" y="305">'25 Q1</text>
+            <text x="625" y="305">Q2</text><text x="810" y="305">Q3</text><text x="995" y="305">Q4</text>
+            <text x="1180" y="305">'26 Q1</text><text x="1340" y="305">Q2</text>
+          </g>
+        </svg>
+      </div>
+      <div class="sp-foot">
+        <span class="wm">MANAGED BY Ad<i>Fyrr</i></span>
+        <span><b>✦</b> FUEL YOUR GROWTH <b>✦</b></span>
+        <span>ADFYRR.COM</span>
+      </div>
+      </div>
     </div>
   </div>
 </section>
