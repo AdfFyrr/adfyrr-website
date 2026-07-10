@@ -65,6 +65,8 @@
   .hl{position:relative;white-space:nowrap}
   .hl i{position:relative;z-index:1;font-style:inherit}
   .hl::before{content:'';position:absolute;left:-.08em;right:-.08em;top:.5em;bottom:.02em;background:var(--yellow);z-index:0;transform:skewX(-6deg)}
+  .hd{position:relative;display:inline-block;z-index:0}
+  .hd::before{content:'';position:absolute;left:-.08em;right:-.08em;top:.05em;bottom:-.02em;background:var(--yellow);z-index:-1;transform:skewX(-4deg)}
   .eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:10px}
   .eyebrow svg{width:14px;height:14px}
   .num-mono{font-variant-numeric:tabular-nums}
@@ -117,7 +119,7 @@
   .hero{padding:84px 0 90px;position:relative;overflow:hidden}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
   @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.hero-vis{display:none}}
-  .hero h1{font-size:clamp(52px,7.4vw,96px);margin:24px 0 26px;color:var(--ink)}
+  .hero h1{font-size:clamp(40px,5.6vw,72px);margin:20px 0 24px;color:var(--ink)}
   .hero .sub{font-size:19px;color:var(--mid);max-width:560px;line-height:1.65}
   .hero .sub strong{color:var(--ink)}
   .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;align-items:center}
@@ -350,6 +352,26 @@
   @media(prefers-reduced-motion:reduce){.shot-col,.ads-track{animation:none}}
 
   .approve{background:var(--ink);color:var(--yellow);text-align:center;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px}
+
+  /* ---------- mobile spacing ---------- */
+  @media(max-width:760px){
+    .sec{padding:60px 0}
+    .sec-head{margin-bottom:34px}
+    .sec-head h2{margin:14px 0 14px}
+    .hero{padding:48px 0 60px}
+    .metrics{padding:52px 0}
+    .metrics-grid{gap:0}
+    .showcase{padding:60px 0 0}
+    .shots-viewport{height:440px}
+    .ads-band{padding:40px 0 60px}
+    .final{padding:76px 0 84px}
+    .foot-grid{gap:28px}
+    footer{padding:48px 0 32px}
+    .work-grid,.svc-grid,.price-grid,.proc-grid{gap:18px}
+    .hybrid{padding:24px 22px;gap:18px}
+    .cmp{margin-top:48px}
+    .custom-band{padding:16px 20px}
+  }
 </style>
 
 <!-- ============ TICKER ============ -->
@@ -376,7 +398,7 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Performance marketing for D2C brands</span>
-      <h1 class="disp rv rv-d1">Your ads aren't broken.<br>Your <span class="doodle">agency<svg class="uline" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14 C40 8, 80 16, 118 10 S 180 12, 197 8"/></svg></span> is.<br><span class="em">We fix that.</span></h1>
+      <h1 class="disp rv rv-d1">Your ads <span class="hd">aren't broken.</span><br>Your <span class="doodle">agency<svg class="uline" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14 C40 8, 80 16, 118 10 S 180 12, 197 8"/></svg></span> is.<br><span class="em">We fix that.</span></h1>
       <p class="sub rv rv-d2">We take D2C brands from <strong>₹5–10L/month to their first crore</strong> with Meta &amp; Google ads, creative that converts and landing pages built to sell. <span class="hl"><i>Senior strategists only</i></span> — no junior hand-offs, no 12-month lock-ins.</p>
       <div class="hero-ctas rv rv-d3">
         <a class="btn btn-red" href="contact.html">Book a 10-Min Fuel Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>

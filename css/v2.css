@@ -253,3 +253,21 @@ footer.sitefooter{background:var(--black);color:#9C958E;border-top:1px solid rgb
 .foot-grid a{display:block;margin-bottom:10px}
 .foot-grid a:hover{color:var(--cream)}
 .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:52px;padding-top:26px;border-top:1px solid rgba(240,237,234,.14);font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+
+/* ---------- mobile spacing ---------- */
+@media(max-width:760px){
+  .sec{padding:60px 0}
+  .sec-sm{padding:48px 0}
+  .sec-head{margin-bottom:34px}
+  .sec-head h2{margin:14px 0 14px}
+  .page-hero{padding:52px 0 44px}
+  .final{padding:76px 0 84px}
+  footer.sitefooter{padding:48px 0 32px}
+  .foot-grid{gap:28px}
+  .svc-grid,.price-grid,.proc-grid{gap:18px}
+  .split{gap:34px}
+  .contact-grid{gap:30px}
+  .enterprise{padding:24px 22px}
+  .fee-strip{margin-top:32px}
+  .legal{padding:30px 22px}
+}
