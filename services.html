@@ -8,50 +8,44 @@
 <link rel="canonical" href="https://adfyrr.com/services.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/v2.css" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
 
 <!-- NAV -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="AdFyrr home">
-      <img src="assets/logo-black.png" alt="AdFyrr — Fuel Your Growth" />
-    </a>
-    <nav class="nav-links" aria-label="Primary">
+<nav class="sitenav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html"><span class="word">Ad<b>Fyrr</b></span></a>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="services.html" class="active">Services</a>
+      <a href="india.html">India Plans</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="tel:+13478018251" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>+1 347 801 8251</a>
-      <a href="contact.html" class="btn btn-primary">Get a Free Audit</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a class="btn btn-red nav-cta" href="contact.html">Book a Fuel Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / <span>Services</span></div>
+    <span class="eyebrow"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> What we do</span>
+    <h1>Performance marketing<br>that <span class="em">pays for itself.</span></h1>
+    <p class="lead">From the first impression to repeat purchase, AdFyrr runs the channels that grow your revenue — engineered, measured, and optimized for profit.</p>
   </div>
 </header>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <div class="crumbs"><a href="index.html">Home</a> / <span>Services</span></div>
-    <h1>Performance marketing that pays for itself</h1>
-    <p class="lead">From the first impression to repeat purchase, AdFyrr runs the channels that grow your revenue — engineered, measured, and optimized for profit.</p>
-  </div>
-</section>
-
-<!-- SERVICE DETAIL SECTIONS -->
-<section class="section">
-  <div class="container">
-
-    <!-- 1 Paid Social -->
-    <div class="split reveal" style="margin-bottom:90px">
-      <div>
-        <span class="eyebrow">01 — Paid Social</span>
-        <h2>Meta &amp; TikTok ads that scale profitably</h2>
+<!-- SERVICE DETAIL: PAID SOCIAL -->
+<section class="sec">
+  <div class="wrap">
+    <div class="split" style="margin-bottom:90px">
+      <div class="rv">
+        <span class="eyebrow"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> 01 — Paid Social</span>
+        <h2>Meta &amp; TikTok ads that scale <span class="em">profitably</span></h2>
         <p class="lead">We build paid social engines on Facebook, Instagram, and TikTok designed to find your best customers at the lowest cost — and keep finding them as you scale.</p>
         <ul class="split-list">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Account architecture &amp; audience strategy</b><span>Campaign structures built for stable, scalable spend.</span></div></li>
@@ -59,30 +53,33 @@
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Daily optimization to target ROAS</b><span>Budget shifted to winners every single day.</span></div></li>
         </ul>
       </div>
-      <div class="split-visual"><div class="split-visual-inner">
-        <div class="label" style="color:#A1A1AA;font-size:.8rem;font-weight:600;margin-bottom:6px">Meta Ads — last 30 days</div>
-        <div class="value" style="color:#fff;font-size:2.2rem;font-weight:900">4.7x ROAS</div>
-        <svg viewBox="0 0 300 100" preserveAspectRatio="none" style="width:100%;height:80px;margin-top:18px">
-          <defs><linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E0218A" stop-opacity=".4"/><stop offset="1" stop-color="#7B2FF7" stop-opacity="0"/></linearGradient><linearGradient id="l1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF4D8D"/><stop offset="1" stop-color="#7B2FF7"/></linearGradient></defs>
-          <path d="M0 85 L60 78 L120 60 L180 64 L240 36 L300 12 L300 100 L0 100 Z" fill="url(#a1)"/>
-          <path d="M0 85 L60 78 L120 60 L180 64 L240 36 L300 12" fill="none" stroke="url(#l1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div></div>
+      <div class="rv rv-d1">
+        <div class="vcard">
+          <div class="vhead"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg> Meta Ads — last 30 days</div>
+          <div class="vbig num-mono">4.7<span style="font-size:28px">x ROAS</span></div>
+          <svg viewBox="0 0 300 90" preserveAspectRatio="none" style="width:100%;height:90px;padding:0 16px 16px;box-sizing:border-box">
+            <path d="M0 78 L60 70 L120 52 L180 56 L240 30 L300 8" fill="none" stroke="#BB080B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="300" cy="8" r="5" fill="#BB080B"/>
+          </svg>
+        </div>
+      </div>
     </div>
 
-    <!-- 2 Google Ads -->
-    <div class="split reveal" style="margin-bottom:90px">
-      <div class="split-visual" style="order:2"><div class="split-visual-inner">
-        <div class="label" style="color:#A1A1AA;font-size:.8rem;font-weight:600;margin-bottom:14px">Search &amp; Shopping mix</div>
-        <div style="display:grid;gap:14px">
-          <div><div style="display:flex;justify-content:space-between;color:#fff;font-weight:700;font-size:.9rem"><span>Branded Search</span><span>6.8x</span></div><div style="height:8px;background:#2A2A2F;border-radius:9px;margin-top:6px"><div style="height:8px;width:88%;border-radius:9px;background:linear-gradient(90deg,#FF4D8D,#7B2FF7)"></div></div></div>
-          <div><div style="display:flex;justify-content:space-between;color:#fff;font-weight:700;font-size:.9rem"><span>Shopping / PMax</span><span>4.1x</span></div><div style="height:8px;background:#2A2A2F;border-radius:9px;margin-top:6px"><div style="height:8px;width:64%;border-radius:9px;background:linear-gradient(90deg,#FF4D8D,#7B2FF7)"></div></div></div>
-          <div><div style="display:flex;justify-content:space-between;color:#fff;font-weight:700;font-size:.9rem"><span>Non-brand Search</span><span>3.3x</span></div><div style="height:8px;background:#2A2A2F;border-radius:9px;margin-top:6px"><div style="height:8px;width:50%;border-radius:9px;background:linear-gradient(90deg,#FF4D8D,#7B2FF7)"></div></div></div>
+    <!-- SERVICE DETAIL: GOOGLE ADS -->
+    <div class="split" style="margin-bottom:90px">
+      <div class="rv" style="order:2">
+        <div class="vcard">
+          <div class="vhead"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> Search &amp; Shopping mix</div>
+          <div class="vpad">
+            <div class="vbar"><div class="vb-row"><span>Branded Search</span><span class="num-mono">6.8x</span></div><div class="vb-track"><div class="vb-fill" style="width:88%"></div></div></div>
+            <div class="vbar"><div class="vb-row"><span>Shopping / PMax</span><span class="num-mono">4.1x</span></div><div class="vb-track"><div class="vb-fill" style="width:64%"></div></div></div>
+            <div class="vbar" style="margin-bottom:2px"><div class="vb-row"><span>Non-brand Search</span><span class="num-mono">3.3x</span></div><div class="vb-track"><div class="vb-fill" style="width:50%"></div></div></div>
+          </div>
         </div>
-      </div></div>
-      <div style="order:1">
-        <span class="eyebrow">02 — Google Ads</span>
-        <h2>Capture high-intent demand on Search</h2>
+      </div>
+      <div class="rv" style="order:1">
+        <span class="eyebrow"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> 02 — Google Ads</span>
+        <h2>Capture high-intent demand on <span class="em">Search</span></h2>
         <p class="lead">When someone is ready to buy, we make sure they find you. Search, Shopping, and Performance Max campaigns structured for efficient, scalable returns.</p>
         <ul class="split-list">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Search, Shopping &amp; PMax</b><span>Full Google ecosystem coverage, structured the right way.</span></div></li>
@@ -92,11 +89,11 @@
       </div>
     </div>
 
-    <!-- 3 Email & SMS -->
-    <div class="split reveal">
-      <div>
-        <span class="eyebrow">03 — Retention</span>
-        <h2>Email &amp; SMS that compounds LTV</h2>
+    <!-- SERVICE DETAIL: RETENTION -->
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> 03 — Retention</span>
+        <h2>Email &amp; SMS that compounds <span class="em">LTV</span></h2>
         <p class="lead">Owned channels are your highest-margin revenue. We build Klaviyo flows and campaigns that turn first-time buyers into loyal, repeat customers.</p>
         <ul class="split-list">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Automated lifecycle flows</b><span>Welcome, browse, cart, post-purchase, and win-back.</span></div></li>
@@ -104,143 +101,143 @@
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Deliverability &amp; list health</b><span>Reach the inbox and protect your sender reputation.</span></div></li>
         </ul>
       </div>
-      <div class="split-visual"><div class="split-visual-inner">
-        <div class="label" style="color:#A1A1AA;font-size:.8rem;font-weight:600;margin-bottom:6px">Email &amp; SMS share of revenue</div>
-        <div class="value" style="color:#fff;font-size:2.2rem;font-weight:900">32% <em style="color:#4ADE80;font-size:1rem;margin-left:6px">▲ from 9%</em></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;padding-top:22px;border-top:1px solid #2A2A2F">
-          <div><div style="background:linear-gradient(150deg,#FF4D8D,#7B2FF7);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;font-size:1.5rem">48%</div><div style="color:#A1A1AA;font-size:.78rem;font-weight:600">Avg. open rate</div></div>
-          <div><div style="color:#fff;font-weight:900;font-size:1.5rem">3.1x</div><div style="color:#A1A1AA;font-size:.78rem;font-weight:600">Repeat purchase rate</div></div>
+      <div class="rv rv-d1">
+        <div class="vcard">
+          <div class="vhead"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg> Email &amp; SMS share of revenue</div>
+          <div class="vbig num-mono">32%</div>
+          <div class="vlbl">Up from 9% at engagement start</div>
+          <div class="vstat-grid" style="border-top:1.5px solid var(--line)">
+            <div class="vstat"><div class="n red num-mono">48%</div><div class="t">Avg. open rate</div></div>
+            <div class="vstat"><div class="n num-mono">3.1x</div><div class="t">Repeat purchase rate</div></div>
+          </div>
         </div>
-      </div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MORE SERVICES GRID -->
-<section class="section cloud">
-  <div class="container">
-    <div class="head-block center reveal">
-      <span class="eyebrow centered">Also in the toolkit</span>
-      <h2>Everything else your growth needs</h2>
+<!-- MORE SERVICES -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Also in the toolkit</span>
+      <h2 class="disp rv rv-d1">Everything else your<br>growth <span class="em">needs.</span></h2>
     </div>
-    <div class="cards">
-      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></div><h3>Conversion Rate Optimization</h3><p>Landing pages, A/B tests, and funnel improvements that lift conversion rate and average order value.</p></div>
-      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div><h3>Performance Creative</h3><p>Static, video, and UGC ad creative concepted and iterated against live performance data.</p></div>
-      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M21.2 8A10 10 0 0 0 16 2.8V8h5.2z"/></svg></div><h3>Analytics &amp; Attribution</h3><p>Server-side tracking, blended ROAS reporting, and dashboards that tell the real story.</p></div>
+    <div class="svc-grid">
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></div><h3>Conversion Rate Optimization</h3><p>Landing pages, A/B tests, and funnel improvements that lift conversion rate and average order value.</p></div>
+      <div class="svc rv rv-d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg></div><h3>Performance Creative</h3><p>Static, video, and UGC ad creative concepted and iterated against live performance data.</p></div>
+      <div class="svc rv rv-d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M21.2 8A10 10 0 0 0 16 2.8V8h5.2z"/></svg></div><h3>Analytics &amp; Attribution</h3><p>Server-side tracking, blended ROAS reporting, and dashboards that tell the real story.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section">
-  <div class="container">
-    <div class="head-block center reveal">
-      <span class="eyebrow centered">Engagements</span>
-      <h2>Simple, transparent retainers</h2>
-      <p class="lead">Pricing scales with your needs and ad spend. Every engagement starts with a free audit — no obligation, no lock-in contracts. Final pricing is confirmed in your proposal.</p>
+<!-- ENGAGEMENTS (USD) -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Engagements</span>
+      <h2 class="disp rv rv-d1">Simple, transparent <span class="em">retainers.</span></h2>
+      <p class="sec-sub rv rv-d2">Pricing scales with your needs and ad spend. Every engagement starts with a free audit — no obligation, no lock-in contracts. Final pricing is confirmed in your proposal. Indian brands: see our <a href="india.html" style="color:var(--red);font-weight:700">India plans in ₹</a>.</p>
     </div>
-    <div class="pricing">
-      <div class="price reveal">
-        <h3>Launch</h3>
-        <p class="price-sub">For brands spending up to $25k/mo on ads</p>
-        <div class="price-amt">$2,500<span>/mo</span></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>One primary channel (Meta or Google)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Campaign build &amp; daily management</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Weekly reporting dashboard</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Monthly strategy call</li>
+    <div class="price-grid">
+      <div class="plan rv">
+        <div class="phead"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span><span class="name">Launch</span></div>
+        <p class="psub">For brands spending up to $25k/mo on ads</p>
+        <div class="amt num-mono">$2,500<small>/MO</small></div>
+        <ul style="margin-top:22px">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>One primary channel (Meta or Google)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Campaign build &amp; daily management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Weekly reporting dashboard</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Monthly strategy call</li>
         </ul>
-        <a href="contact.html" class="btn btn-ghost">Get started</a>
+        <a class="btn btn-ink" href="contact.html">Get started</a>
       </div>
-      <div class="price featured reveal">
-        <span class="tag">Most popular</span>
-        <h3>Scale</h3>
-        <p class="price-sub">For brands spending $25k–$100k/mo</p>
-        <div class="price-amt">$4,500<span>/mo</span></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Multi-channel (Paid Social + Google)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Email &amp; SMS retention included</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Performance creative pipeline</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bi-weekly strategy calls</li>
+      <div class="plan feat rv rv-d1">
+        <span class="badge">Most popular</span>
+        <div class="phead"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span class="name">Scale</span></div>
+        <p class="psub">For brands spending $25k–$100k/mo</p>
+        <div class="amt num-mono">$4,500<small>/MO</small></div>
+        <ul style="margin-top:22px">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Multi-channel (Paid Social + Google)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Email &amp; SMS retention included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Performance creative pipeline</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Bi-weekly strategy calls</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary">Get started</a>
+        <a class="btn btn-yellow" href="contact.html">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="price reveal">
-        <h3>Growth+</h3>
-        <p class="price-sub">For brands spending $100k+/mo</p>
-        <div class="price-amt">Custom</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full-funnel, all channels</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dedicated senior growth team</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom analytics &amp; attribution</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Weekly calls &amp; priority support</li>
+      <div class="plan rv rv-d2">
+        <div class="phead"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M12 3c2 3 6 4 6 9a6 6 0 0 1-12 0c0-5 4-6 6-9Z"/></svg></span><span class="name">Growth+</span></div>
+        <p class="psub">For brands spending $100k+/mo</p>
+        <div class="amt num-mono">Custom</div>
+        <ul style="margin-top:22px">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Full-funnel, all channels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Dedicated senior growth team</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Custom analytics &amp; attribution</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Weekly calls &amp; priority support</li>
         </ul>
-        <a href="contact.html" class="btn btn-ghost">Talk to us</a>
+        <a class="btn btn-ink" href="contact.html">Talk to us</a>
       </div>
     </div>
-    <p class="center" style="margin-top:28px;color:var(--slate-2);font-size:.9rem">Retainer fees are exclusive of advertising spend, which is paid directly to the ad platforms. All fees are quoted in USD.</p>
+    <p class="pricing-note">Retainer fees are exclusive of advertising spend, which is paid directly to the ad platforms. All fees are quoted in USD.</p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section cloud">
-  <div class="container">
-    <div class="head-block center reveal">
-      <span class="eyebrow centered">Questions</span>
-      <h2>Frequently asked</h2>
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Questions</span>
+      <h2 class="disp rv rv-d1">Frequently <span class="em">asked.</span></h2>
     </div>
-    <div class="faq">
-      <details class="faq-item reveal"><summary class="faq-q">How quickly will I see results? <span class="ic">+</span></summary><p class="faq-a">Most clients see meaningful improvements within the first 30–60 days as we rebuild tracking, refresh creative, and optimize campaigns. Sustainable, scaled results typically compound over the first 90 days.</p></details>
-      <details class="faq-item reveal"><summary class="faq-q">Do you require a long-term contract? <span class="ic">+</span></summary><p class="faq-a">No. We work on rolling monthly engagements after an initial onboarding period. We'd rather earn your business every month with results than lock you into paperwork.</p></details>
-      <details class="faq-item reveal"><summary class="faq-q">Is ad spend included in the retainer? <span class="ic">+</span></summary><p class="faq-a">No. Your advertising budget is paid directly to the platforms (Meta, Google, etc.). Our retainer covers strategy, management, creative, and reporting.</p></details>
-      <details class="faq-item reveal"><summary class="faq-q">What size brands do you work with? <span class="ic">+</span></summary><p class="faq-a">We primarily partner with ecommerce and DTC brands spending $10k–$500k+ per month on advertising. Book a free audit and we'll tell you honestly whether we're a fit.</p></details>
-      <details class="faq-item reveal"><summary class="faq-q">How do I get started? <span class="ic">+</span></summary><p class="faq-a">Book a free growth audit through our contact page. We'll review your accounts, share findings, and propose a plan. There's no obligation to continue.</p></details>
+    <div class="faq-list">
+      <details class="rv"><summary>How quickly will I see results? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary><div class="ans">Most clients see meaningful improvements within the first 30–60 days as we rebuild tracking, refresh creative, and optimize campaigns. Sustainable, scaled results typically compound over the first 90 days.</div></details>
+      <details class="rv"><summary>Do you require a long-term contract? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary><div class="ans">No. We work on rolling monthly engagements after an initial onboarding period. We'd rather earn your business every month with results than lock you into paperwork.</div></details>
+      <details class="rv"><summary>Is ad spend included in the retainer? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary><div class="ans">No. Your advertising budget is paid directly to the platforms (Meta, Google, etc.). Our retainer covers strategy, management, creative, and reporting.</div></details>
+      <details class="rv"><summary>What size brands do you work with? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary><div class="ans">We primarily partner with ecommerce and DTC brands spending $10k–$500k+ per month on advertising. Book a free audit and we'll tell you honestly whether we're a fit.</div></details>
+      <details class="rv"><summary>How do I get started? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary><div class="ans">Book a free growth audit through our contact page. We'll review your accounts, share findings, and propose a plan. There's no obligation to continue.</div></details>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section">
-  <div class="container">
-    <div class="cta-band reveal"><div class="cta-inner">
-      <div><h2>Let's build your growth engine</h2><p>Book a free audit and we'll map out exactly how we'd scale your brand profitably.</p></div>
-      <a href="contact.html" class="btn btn-primary" style="font-size:1.05rem;padding:17px 34px">Book your free audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div></div>
+<!-- FINAL CTA -->
+<section class="sec-dark final">
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:#F5ED07"><svg viewBox="0 0 14 14" fill="#F5ED07"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Free audit — no obligation</span>
+    <h2 class="rv rv-d1">Let's build your<br><span style="color:#E14548">growth engine.</span></h2>
+    <p class="sec-sub rv rv-d2" style="max-width:480px">Book a free audit and we'll map out exactly how we'd scale your brand profitably.</p>
+    <a class="btn btn-yellow rv rv-d3" style="font-size:17px;padding:18px 36px" href="contact.html">Book your free audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-about">
-        <div class="footer-logo">
-          <img src="assets/logo-white.png" alt="AdFyrr" />
-        </div>
-        <p>AdFyrr is a premium performance marketing agency helping ambitious ecommerce and DTC brands turn ad spend into predictable, profitable growth.</p>
+<footer class="sitefooter">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="word" style="font-size:22px;color:#F0EDEA">Ad<b style="color:#E14548">Fyrr</b></span></a>
+        <p style="max-width:280px;margin-top:14px">Performance marketing for D2C brands that are done playing small.</p>
       </div>
-      <div class="footer-col"><h4>Company</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Services</h4><a href="services.html">Paid Social</a><a href="services.html">Google Ads</a><a href="services.html">Email &amp; SMS</a><a href="services.html">Conversion Rate</a></div>
-      <div class="footer-col"><h4>Contact</h4>
-        <ul class="footer-contact">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>30 N Gould St Ste R,<br/>Sheridan, WY 82801, USA</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13478018251">+1 347 801 8251</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:support@adfyrr.com">support@adfyrr.com</a></li>
-        </ul>
+      <div>
+        <h4>Company</h4>
+        <a href="index.html">Home</a><a href="services.html">Services</a><a href="india.html">India Plans</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</p>
+        <p style="margin-top:10px"><a href="tel:+13478018251" style="display:inline">+1 347 801 8251</a><br><a href="mailto:support@adfyrr.com" style="display:inline">support@adfyrr.com</a></p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>© <span data-year>2026</span> AdFyrr. All rights reserved.</div>
-      <div class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund-policy.html">Refund Policy</a></div>
-      <div class="footer-socials">
-        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.34v-7H6v7h2.34zM7.17 9.3a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17.34v-3.84c0-2.05-1.1-3-2.56-3-1.18 0-1.71.65-2 1.11v-.95H11.1c.03.66 0 7 0 7h2.34v-3.91c0-.21.01-.42.08-.57.18-.42.56-.86 1.21-.86.86 0 1.2.65 1.2 1.6v3.74H18z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
-      </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> ADFYRR. ALL RIGHTS RESERVED.</span>
+      <span>FUEL YOUR GROWTH ✦</span>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/v2.js"></script>
 </body>
 </html>
