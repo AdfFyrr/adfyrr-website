@@ -3,19 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AdFyrr — Premium Performance Marketing Agency | Fuel Your Growth</title>
-<meta name="description" content="AdFyrr is a premium performance marketing agency helping ecommerce and DTC brands scale profitably with Meta Ads, Google Ads, email & SMS, and conversion optimization. Fuel your growth." />
-<meta name="keywords" content="performance marketing agency, Meta Ads, Google Ads, ecommerce growth, paid social, PPC, email marketing, Klaviyo, Shopify, AdFyrr" />
+<title>AdFyrr — Performance Marketing for D2C Brands | Fuel Your Growth</title>
+<meta name="description" content="AdFyrr takes D2C brands from ₹5–10L/month to their first crore with Meta & Google ads, conversion-first creative and landing pages. Flat retainers, 90-day guarantee. Fuel your growth." />
+<meta name="keywords" content="performance marketing agency, D2C marketing, Meta Ads, Google Ads, ecommerce growth, paid social, CRO, Klaviyo, Shopify, AdFyrr" />
 <meta name="author" content="AdFyrr" />
 <link rel="canonical" href="https://adfyrr.com/" />
-<meta property="og:title" content="AdFyrr — Premium Performance Marketing Agency" />
-<meta property="og:description" content="We turn ad spend into predictable, profitable growth for ambitious ecommerce and DTC brands." />
+<meta property="og:title" content="AdFyrr — Performance Marketing for D2C Brands" />
+<meta property="og:description" content="We take D2C brands from ₹5–10L/month to their first crore. Meta & Google ads, creative that converts, landing pages built to sell." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://adfyrr.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <script type="application/ld+json">
 {
@@ -26,7 +25,7 @@
   "url": "https://adfyrr.com",
   "telephone": "+1-347-801-8251",
   "priceRange": "$$",
-  "description": "Premium performance marketing agency for ecommerce and DTC brands.",
+  "description": "Performance marketing agency for D2C and ecommerce brands — Meta Ads, Google Ads, creative, CRO and retention.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "30 N Gould St Ste R",
@@ -39,369 +38,678 @@
 </script>
 </head>
 <body>
+<style>
+  :root{
+    --cream:#F0EDEA; --cream2:#E8E5E0; --white:#FFFFFF;
+    --ink:#111111; --black:#0D0D0D; --mid:#444444; --lt:#888888;
+    --red:#BB080B; --red-dk:#8A0508; --red-lt:#E14548; --red-pale:#FBEAEA;
+    --yellow:#F5ED07;
+    --line:rgba(17,17,17,.12);
+    --disp:'Anton','Arial Narrow',sans-serif;
+    --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  svg{display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 
-<!-- ===================== NAV ===================== -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="AdFyrr home">
-      <img src="assets/logo-black.png" alt="AdFyrr — Fuel Your Growth" />
+  /* ---------- type ---------- */
+  .disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.005em;line-height:.98}
+  .em{color:var(--red);font-style:normal}
+  .hl{position:relative;white-space:nowrap}
+  .hl i{position:relative;z-index:1;font-style:inherit}
+  .hl::before{content:'';position:absolute;left:-.08em;right:-.08em;top:.5em;bottom:.02em;background:var(--yellow);z-index:0;transform:skewX(-6deg)}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow svg{width:14px;height:14px}
+  .num-mono{font-variant-numeric:tabular-nums}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15.5px;padding:16px 28px;border-radius:8px;white-space:nowrap;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s}
+  .btn svg{width:17px;height:17px;transition:transform .2s var(--ease)}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 3px 0 var(--red-dk)}
+  .btn-red:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--red-dk)}
+  .btn-red:active{transform:translateY(1px);box-shadow:0 1px 0 var(--red-dk)}
+  .btn-ink{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+  .btn-ink:hover{background:var(--ink);color:var(--cream)}
+  .btn-yellow{background:var(--yellow);color:var(--ink);box-shadow:0 3px 0 #C9C400}
+  .btn-yellow:hover{transform:translateY(-2px);box-shadow:0 5px 0 #C9C400}
+
+  /* ---------- ticker ---------- */
+  .ticker{background:var(--red);color:#fff;overflow:hidden;padding:9px 0;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+  .ticker-track{display:flex;gap:0;width:max-content;animation:slide 26s linear infinite}
+  .ticker span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;white-space:nowrap}
+  .ticker svg{width:11px;height:11px;flex:none}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(240,237,234,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:9px}
+  .logo .word{font-family:'Poppins',var(--body);font-weight:800;font-size:27px;letter-spacing:-.02em;color:var(--ink);line-height:1}
+  .logo .word b{color:var(--red);font-weight:900}
+  .logo .tag{font-family:var(--body);font-size:8.5px;font-weight:800;letter-spacing:.3em;color:var(--ink);display:block;margin-top:3px}
+  .nav-links{display:flex;gap:34px;font-size:15px;font-weight:600;color:var(--mid)}
+  .nav-links a{position:relative;padding-bottom:3px}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .25s var(--ease)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{padding:11px 20px;font-size:14px}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  /* ---------- reveal animations ---------- */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
+  @media(prefers-reduced-motion:reduce){
+    .rv{opacity:1;transform:none;transition:none}
+    .ticker-track,.marquee-track{animation:none}
+    .float1,.float2,.float3{animation:none}
+    .btn,.btn svg,.case,.svc{transition:none}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 90px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.hero-vis{display:none}}
+  .hero h1{font-size:clamp(52px,7.4vw,96px);margin:24px 0 26px;color:var(--ink)}
+  .hero .sub{font-size:19px;color:var(--mid);max-width:560px;line-height:1.65}
+  .hero .sub strong{color:var(--ink)}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;align-items:center}
+  .hero-proof{display:flex;gap:12px;align-items:center;margin-top:32px;flex-wrap:wrap;color:var(--mid);font-size:14.5px;font-weight:600}
+  .hero-proof .chip{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:99px;padding:8px 16px}
+  .hero-proof .chip svg{width:15px;height:15px;flex:none}
+  /* underline doodle */
+  .doodle{position:relative;display:inline-block}
+  .doodle svg.uline{position:absolute;left:0;right:0;bottom:-.04em;width:100%;height:.14em}
+  .uline path{stroke:var(--red);stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.1s .5s var(--ease) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  /* hero visual — flat dashboard illustration */
+  .hero-vis{position:relative;height:480px}
+  .vcard{position:absolute;background:var(--white);border:1.5px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink)}
+  .float1{animation:bob 5s ease-in-out infinite}
+  .float2{animation:bob 6s .8s ease-in-out infinite}
+  .float3{animation:bob 5.5s 1.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .vcard .vhead{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+  .vcard .vhead svg{width:14px;height:14px}
+  .roas-big{font-family:var(--disp);font-size:54px;color:var(--red);line-height:1;padding:18px 16px 4px}
+  .roas-lbl{font-family:var(--mono);font-size:11px;color:var(--lt);padding:0 16px 16px;letter-spacing:.12em}
+  .vbadge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--yellow);border:1.5px solid var(--ink);border-radius:99px;padding:9px 16px;font-weight:800;font-size:13.5px;box-shadow:4px 4px 0 var(--ink)}
+  .vbadge svg{width:15px;height:15px}
+
+  /* ---------- marquee logos ---------- */
+  .marquee-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;background:var(--cream2)}
+  .marquee{overflow:hidden}
+  .marquee-track{display:flex;gap:72px;width:max-content;animation:slide 30s linear infinite;align-items:center}
+  .pl{display:flex;align-items:center;gap:10px;color:var(--mid);font-weight:700;font-size:14.5px;white-space:nowrap}
+  .pl svg{width:20px;height:20px;flex:none}
+
+  /* ---------- sections ---------- */
+  .sec{padding:104px 0}
+  .sec-head{max-width:780px;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(38px,5.4vw,64px);margin:18px 0 18px}
+  .sec-sub{font-size:17.5px;color:var(--mid);max-width:560px;line-height:1.65}
+  .sec-white{background:var(--white)}
+  .sec-dark{background:var(--black);color:var(--cream)}
+  .sec-dark .sec-sub{color:#B9B3AD}
+
+  /* ---------- metrics (dark) ---------- */
+  .metrics{padding:78px 0}
+  .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(240,237,234,.18)}
+  @media(max-width:880px){.metrics-grid{grid-template-columns:repeat(2,1fr)}}
+  .metric{padding:34px 30px;border-right:1px solid rgba(240,237,234,.18)}
+  .metric:last-child{border-right:none}
+  @media(max-width:880px){.metric:nth-child(2){border-right:none}.metric:nth-child(-n+2){border-bottom:1px solid rgba(240,237,234,.18)}}
+  .metric .ic{width:38px;height:38px;border-radius:9px;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .metric .ic svg{width:19px;height:19px}
+  .metric .num{font-family:var(--disp);font-size:clamp(40px,4.6vw,58px);line-height:1;color:var(--cream);font-variant-numeric:tabular-nums}
+  .metric .num .suf{color:var(--red-lt)}
+  .metric .lbl{font-family:var(--mono);color:#9C958E;font-size:12px;margin-top:12px;letter-spacing:.1em;text-transform:uppercase}
+
+  /* ---------- work ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  @media(max-width:940px){.work-grid{grid-template-columns:1fr}}
+  .case{background:var(--white);border:1.5px solid var(--ink);border-radius:16px;padding:0;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .case:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+  .case-top{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1.5px solid var(--ink);background:var(--cream)}
+  .case-top .cat{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mid)}
+  .case-top .cico{width:32px;height:32px;border-radius:8px;background:var(--red-pale);display:flex;align-items:center;justify-content:center}
+  .case-top .cico svg{width:17px;height:17px}
+  .case-body{padding:26px 24px 24px}
+  .case .big{font-family:var(--disp);font-size:44px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+  .case .big em{color:var(--red);font-style:normal}
+  .case .desc{color:var(--mid);font-size:15px;line-height:1.6;margin-top:12px}
+  .case .chart{margin-top:22px;background:var(--cream);border-radius:10px;padding:14px 12px 10px}
+  .case .tags{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+  .tags .tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--red-pale);color:var(--red-dk)}
+  .tags .tag svg{width:12px;height:12px}
+
+  /* ---------- services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  @media(max-width:940px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
+  .svc{background:var(--cream);border:1.5px solid var(--line);border-radius:16px;padding:30px 28px;transition:border-color .2s,transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .svc:hover{border-color:var(--ink);transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--red)}
+  .svc .ic{width:52px;height:52px;border-radius:13px;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+  .svc .ic svg{width:25px;height:25px}
+  .svc h3{font-size:19px;font-weight:800;margin-bottom:10px}
+  .svc p{color:var(--mid);font-size:15px;line-height:1.6}
+  .svc .more{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+  .svc .more svg{width:13px;height:13px}
+
+  /* ---------- process ---------- */
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+  @media(max-width:880px){.proc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+  .step{background:var(--white);border:1.5px solid var(--ink);border-radius:16px;padding:28px 24px;position:relative}
+  .step .sic{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);background:var(--yellow);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .step .sic svg{width:22px;height:22px}
+  .step .n{position:absolute;top:22px;right:22px;font-family:var(--disp);font-size:30px;color:var(--cream2)}
+  .step h3{font-family:var(--disp);font-size:23px;text-transform:uppercase;margin-bottom:10px;letter-spacing:.015em}
+  .step p{color:var(--mid);font-size:14.5px;line-height:1.6}
+
+  /* ---------- pricing ---------- */
+  .pmodel{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+  .pmodel .pm-chip{display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1.5px solid var(--line);border-radius:99px;padding:10px 18px;font-size:14px;font-weight:600;color:var(--mid)}
+  .pmodel .pm-chip svg{width:16px;height:16px;flex:none}
+  .pmodel .pm-chip b{color:var(--ink)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+  @media(max-width:940px){.price-grid{grid-template-columns:1fr}}
+  .plan{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:34px 30px;display:flex;flex-direction:column;position:relative;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .plan:hover{transform:translateY(-4px);box-shadow:0 14px 34px -14px rgba(17,17,17,.28)}
+  .plan.feat{background:var(--ink);color:var(--cream);box-shadow:8px 8px 0 var(--red)}
+  .plan.feat:hover{transform:translate(-2px,-6px);box-shadow:10px 10px 0 var(--red)}
+  .plan .badge{position:absolute;top:-15px;left:30px;background:var(--yellow);color:var(--ink);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:99px;border:1.5px solid var(--ink)}
+  .plan .phead{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .plan .pic{width:40px;height:40px;border-radius:10px;background:var(--red-pale);display:flex;align-items:center;justify-content:center;flex:none}
+  .plan.feat .pic{background:rgba(240,237,234,.12)}
+  .plan .pic svg{width:20px;height:20px}
+  .plan .name{font-family:var(--disp);font-size:23px;text-transform:uppercase;letter-spacing:.03em}
+  .plan .amt{font-family:var(--disp);font-size:50px;margin:20px 0 2px;font-variant-numeric:tabular-nums}
+  .plan .amt small{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--lt)}
+  .plan.feat .amt small{color:#9C958E}
+  .plan .alt{font-family:var(--mono);font-size:12px;color:var(--red);font-weight:600;margin-bottom:6px;letter-spacing:.04em}
+  .plan.feat .alt{color:var(--red-lt)}
+  .plan .spend{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mid);background:var(--cream);border-radius:8px;padding:9px 13px;margin:14px 0 24px}
+  .plan.feat .spend{background:rgba(240,237,234,.1);color:#CFC9C3}
+  .plan .spend svg{width:15px;height:15px;flex:none}
+  .plan ul{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-direction:column;gap:13px;font-size:15px}
+  .plan li{display:flex;gap:11px;align-items:flex-start;color:var(--mid)}
+  .plan.feat li{color:#D8D3CD}
+  .plan li svg{width:17px;height:17px;flex:none;margin-top:3px}
+  .plan .btn{justify-content:center;margin-top:auto}
+  .plan.feat .btn-ink{border-color:var(--cream);color:var(--cream)}
+  .plan.feat .btn-ink:hover{background:var(--cream);color:var(--ink)}
+
+  /* hybrid band */
+  .hybrid{margin-top:28px;background:var(--white);border:1.5px dashed var(--red);border-radius:18px;padding:30px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center}
+  @media(max-width:880px){.hybrid{grid-template-columns:1fr}}
+  .hybrid .hic{width:56px;height:56px;border-radius:14px;background:var(--red);display:flex;align-items:center;justify-content:center}
+  .hybrid .hic svg{width:27px;height:27px}
+  .hybrid h3{font-family:var(--disp);font-size:24px;text-transform:uppercase;margin-bottom:6px}
+  .hybrid p{color:var(--mid);font-size:15px;max-width:560px}
+  .hybrid p b{color:var(--red)}
+
+  /* guarantee */
+  .guarantee{margin-top:28px;background:var(--yellow);border:1.5px solid var(--ink);border-radius:18px;padding:24px 32px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;box-shadow:6px 6px 0 var(--ink)}
+  .guarantee svg{width:40px;height:40px;flex:none}
+  .guarantee b{font-size:17px}
+  .guarantee span{color:#3A3A00;font-size:14.5px}
+
+  /* compare table */
+  .cmp{margin-top:70px}
+  .cmp h3{font-family:var(--disp);font-size:clamp(26px,3.4vw,38px);text-transform:uppercase;margin-bottom:28px}
+  .cmp-scroll{overflow-x:auto;border:1.5px solid var(--ink);border-radius:16px;background:var(--white)}
+  table{border-collapse:collapse;width:100%;min-width:680px;font-size:15px}
+  th,td{padding:16px 22px;text-align:left;border-bottom:1px solid var(--line)}
+  thead th{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);border-bottom:1.5px solid var(--ink);background:var(--cream)}
+  tbody tr:last-child td{border-bottom:none}
+  td.adf{background:var(--red-pale);font-weight:700}
+  td .yes,td .no{display:inline-flex;align-items:center;gap:8px}
+  td .yes svg,td .no svg{width:16px;height:16px}
+  .rowlbl{font-weight:700;color:var(--ink)}
+
+  /* ---------- faq ---------- */
+  .faq-list{max-width:840px}
+  details{background:var(--white);border:1.5px solid var(--line);border-radius:14px;margin-bottom:14px;transition:border-color .2s}
+  details[open]{border-color:var(--ink)}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;font-weight:700;font-size:17px}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .25s var(--ease),background .2s}
+  summary .pm svg{width:13px;height:13px}
+  details[open] .pm{transform:rotate(45deg);background:var(--red);border-color:var(--red)}
+  details[open] .pm svg path{stroke:#fff}
+  details .ans{padding:0 60px 24px 26px;color:var(--mid);font-size:15.5px;line-height:1.7;max-width:720px}
+
+  /* ---------- final cta ---------- */
+  .final{padding:120px 0 130px;text-align:center;position:relative;overflow:hidden}
+  .final .sec-sub{margin:0 auto 40px}
+  .final h2{font-size:clamp(48px,7.4vw,96px);margin:22px 0 24px;color:var(--cream)}
+  .final .spark-l,.final .spark-r{position:absolute;opacity:.9}
+  .final .spark-l{left:6%;top:120px}
+  .final .spark-r{right:7%;bottom:110px}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--black);color:#9C958E;border-top:1px solid rgba(240,237,234,.14);padding:64px 0 40px;font-size:14.5px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:40px}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+  .foot-grid h4{color:var(--cream);font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 16px}
+  .foot-grid a{display:block;margin-bottom:10px}
+  .foot-grid a:hover{color:var(--cream)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:52px;padding-top:26px;border-top:1px solid rgba(240,237,234,.14);font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+
+  .approve{background:var(--ink);color:var(--yellow);text-align:center;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px}
+</style>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>Fuel your growth <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Meta Ads <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Google Ads <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Landing pages <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Retention <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> AI creative testing <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg></span>
+  <span>Fuel your growth <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Meta Ads <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Google Ads <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Landing pages <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> Retention <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg> AI creative testing <svg viewBox="0 0 12 12" fill="#fff"><path d="M6 0l1.6 4.4L12 6 7.6 7.6 6 12 4.4 7.6 0 6l4.4-1.6z"/></svg></span>
+</div></div>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html">
+      <span class="word">Ad<b>Fyrr</b></span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="tel:+13478018251" class="nav-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>
-        +1 347 801 8251
-      </a>
-      <a href="contact.html" class="btn btn-primary">Get a Free Audit</a>
+    <div class="nav-links">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a class="btn btn-red nav-cta" href="contact.html">Book a Fuel Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Performance marketing for D2C brands</span>
+      <h1 class="disp rv rv-d1">Your ads aren't broken.<br>Your <span class="doodle">agency<svg class="uline" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14 C40 8, 80 16, 118 10 S 180 12, 197 8"/></svg></span> is.<br><span class="em">We fix that.</span></h1>
+      <p class="sub rv rv-d2">We take D2C brands from <strong>₹5–10L/month to their first crore</strong> with Meta &amp; Google ads, creative that converts and landing pages built to sell. <span class="hl"><i>Senior strategists only</i></span> — no junior hand-offs, no 12-month lock-ins.</p>
+      <div class="hero-ctas rv rv-d3">
+        <a class="btn btn-red" href="contact.html">Book a 10-Min Fuel Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ink" href="#work">See the results</a>
+      </div>
+      <div class="hero-proof rv rv-d4">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="#F5B301"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3l-6.1 3.3 1.4-6.8L2.2 9.1l6.9-.8z"/></svg> 4.9 avg rating</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg> 40+ brands scaled</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg> India · US · UAE</span>
+      </div>
+    </div>
+
+    <!-- flat illustrated dashboard cluster -->
+    <div class="hero-vis" aria-hidden="true">
+      <div class="vcard float1 rv rv-d2" style="left:0;top:30px;width:270px">
+        <div class="vhead"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg> Blended ROAS</div>
+        <div class="roas-big num-mono" data-count="4.6" data-dec="1">0.0<span style="font-size:30px">x</span></div>
+        <div class="roas-lbl">LAST 30 DAYS · ALL CHANNELS</div>
+      </div>
+      <div class="vcard float2 rv rv-d3" style="right:0;top:150px;width:250px">
+        <div class="vhead"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg> Creative tests</div>
+        <svg viewBox="0 0 250 96" style="padding:10px 14px 14px;width:100%">
+          <g fill="#F0EDEA"><rect x="8" y="60" width="30" height="28" rx="4"/><rect x="46" y="44" width="30" height="44" rx="4"/><rect x="84" y="52" width="30" height="36" rx="4"/><rect x="160" y="22" width="30" height="66" rx="4"/></g>
+          <g fill="#BB080B"><rect x="122" y="34" width="30" height="54" rx="4"/><rect x="198" y="8" width="30" height="80" rx="4"/></g>
+        </svg>
+      </div>
+      <div class="vcard float3 rv rv-d4" style="left:26px;bottom:22px;width:250px">
+        <div class="vhead"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9.5 9 12 21 14.5 9"/></svg> New orders</div>
+        <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg> #8214 — ₹2,499 <span style="margin-left:auto;font-family:var(--mono);font-size:10px;color:#888">JUST NOW</span></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg> #8213 — ₹6,140 <span style="margin-left:auto;font-family:var(--mono);font-size:10px;color:#888">2 MIN</span></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg> #8212 — ₹1,899 <span style="margin-left:auto;font-family:var(--mono);font-size:10px;color:#888">4 MIN</span></div>
+        </div>
+      </div>
+      <div class="vbadge float1 rv rv-d4" style="right:34px;top:60px"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg> +212% MoM</div>
+      <div class="vbadge float3 rv rv-d4" style="right:64px;bottom:64px;background:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> CAC ↓ 38%</div>
+    </div>
   </div>
 </header>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="hero-badge"><span class="dot">★</span> <b>Top-rated</b>&nbsp;performance partner for DTC brands</span>
-        <h1>We turn ad spend into <span class="gradient-text">predictable, profitable growth</span></h1>
-        <p class="lead">AdFyrr is a premium performance marketing agency. We engineer paid acquisition, retention, and conversion systems that scale ecommerce brands — measured in revenue, not vanity metrics.</p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Book a free growth audit
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="services.html" class="btn btn-ghost">Explore services</a>
-        </div>
-        <div class="hero-trust">
-          <div>
-            <div class="stars">★★★★★</div>
-            <small>Rated 4.9/5 by 120+ founders</small>
-          </div>
-          <div>
-            <strong>$50M+</strong>
-            <small>Ad spend managed profitably</small>
-          </div>
-        </div>
-      </div>
+<!-- ============ PARTNER MARQUEE ============ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee"><div class="marquee-track">
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M6.9 4C3.6 4 1 8.2 1 13.1 1 16 2.4 18 4.8 18c1.7 0 3-1 4.7-3.9l1.6-2.7 1.9 3.3C14.9 17.9 16.5 18 18.2 18c2.4 0 4.8-2 4.8-5.2C23 8 20.4 4 17.2 4c-1.9 0-3.5 1.3-5.2 4.1C10.3 5.3 8.8 4 6.9 4Zm0 2.4c1.1 0 2.1 1 3.6 3.5l-1.8 3C7.3 15.2 6.4 15.7 5.3 15.7c-1.2 0-1.9-1-1.9-2.7 0-3.5 1.7-6.6 3.5-6.6Zm10.2 0c1.9 0 3.5 3 3.5 6.5 0 1.8-.7 2.8-2 2.8-1.1 0-1.7-.5-3.2-2.9l-1.9-3.2c1.5-2.4 2.5-3.2 3.6-3.2Z"/></svg> Meta Business Partner</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M23 12.3c0-.9-.1-1.5-.3-2.2H12v4h6.3c-.1 1-.8 2.6-2.3 3.6l3.5 2.7c2.2-2 3.5-4.9 3.5-8.1ZM12 23c3 0 5.5-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7L2 16.7C3.8 20.4 7.6 23 12 23ZM5.6 14a6.8 6.8 0 0 1 0-4.2L2 7.3a11 11 0 0 0 0 9.4L5.6 14ZM12 5.4c1.7 0 2.9.7 3.6 1.4l2.9-2.9C16.7 2.2 14.3 1 12 1 7.6 1 3.8 3.6 2 7.3L5.6 10c.9-2.7 3.4-4.6 6.4-4.6Z"/></svg> Google Partner</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M18.6 5.6c0-.1-.1-.2-.3-.2l-1.9-.1-1.5-1.5c-.2-.1-.4-.1-.5-.1l-.7.3c-.4-1-1.1-1.9-2.4-1.9C9 2.1 7.7 4.3 7.3 5.5l-1.6.5c-.5.2-.5.2-.6.7L3 20l12.6 2.3L21 20.9 18.6 5.6Z"/></svg> Shopify Partner</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M5 7h14v2.6L14.7 12 19 14.4V17H5v-3l5-2-5-2V7Z"/></svg> Klaviyo</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M17.6 8.4V5.9a1.9 1.9 0 1 0-1.9 0v2.5a5.3 5.3 0 0 0-2.6 1.2L7 6.4a2.1 2.1 0 1 0-1 1.6l6 3.1a5.3 5.3 0 1 0 5.6-2.7Zm-1 8a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Z"/></svg> HubSpot</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M6.9 4C3.6 4 1 8.2 1 13.1 1 16 2.4 18 4.8 18c1.7 0 3-1 4.7-3.9l1.6-2.7 1.9 3.3C14.9 17.9 16.5 18 18.2 18c2.4 0 4.8-2 4.8-5.2C23 8 20.4 4 17.2 4c-1.9 0-3.5 1.3-5.2 4.1C10.3 5.3 8.8 4 6.9 4Zm0 2.4c1.1 0 2.1 1 3.6 3.5l-1.8 3C7.3 15.2 6.4 15.7 5.3 15.7c-1.2 0-1.9-1-1.9-2.7 0-3.5 1.7-6.6 3.5-6.6Zm10.2 0c1.9 0 3.5 3 3.5 6.5 0 1.8-.7 2.8-2 2.8-1.1 0-1.7-.5-3.2-2.9l-1.9-3.2c1.5-2.4 2.5-3.2 3.6-3.2Z"/></svg> Meta Business Partner</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M23 12.3c0-.9-.1-1.5-.3-2.2H12v4h6.3c-.1 1-.8 2.6-2.3 3.6l3.5 2.7c2.2-2 3.5-4.9 3.5-8.1ZM12 23c3 0 5.5-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7L2 16.7C3.8 20.4 7.6 23 12 23ZM5.6 14a6.8 6.8 0 0 1 0-4.2L2 7.3a11 11 0 0 0 0 9.4L5.6 14ZM12 5.4c1.7 0 2.9.7 3.6 1.4l2.9-2.9C16.7 2.2 14.3 1 12 1 7.6 1 3.8 3.6 2 7.3L5.6 10c.9-2.7 3.4-4.6 6.4-4.6Z"/></svg> Google Partner</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M18.6 5.6c0-.1-.1-.2-.3-.2l-1.9-.1-1.5-1.5c-.2-.1-.4-.1-.5-.1l-.7.3c-.4-1-1.1-1.9-2.4-1.9C9 2.1 7.7 4.3 7.3 5.5l-1.6.5c-.5.2-.5.2-.6.7L3 20l12.6 2.3L21 20.9 18.6 5.6Z"/></svg> Shopify Partner</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M5 7h14v2.6L14.7 12 19 14.4V17H5v-3l5-2-5-2V7Z"/></svg> Klaviyo</span>
+    <span class="pl"><svg viewBox="0 0 24 24" fill="#111"><path d="M17.6 8.4V5.9a1.9 1.9 0 1 0-1.9 0v2.5a5.3 5.3 0 0 0-2.6 1.2L7 6.4a2.1 2.1 0 1 0-1 1.6l6 3.1a5.3 5.3 0 1 0 5.6-2.7Zm-1 8a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Z"/></svg> HubSpot</span>
+  </div></div>
+</div>
 
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hc-head">
-            <span>Live campaign performance</span>
-            <span class="hc-live"><span class="pulse"></span> LIVE</span>
-          </div>
-          <div class="hc-metric">
-            <div class="label">Return on ad spend (ROAS)</div>
-            <div class="value">4.8x <em>▲ 62%</em></div>
-          </div>
-          <div class="hc-chart">
-            <svg viewBox="0 0 300 120" preserveAspectRatio="none" style="width:100%;height:100%">
-              <defs>
-                <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#E0218A" stop-opacity=".35"/>
-                  <stop offset="1" stop-color="#7B2FF7" stop-opacity="0"/>
-                </linearGradient>
-                <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stop-color="#FF4D8D"/><stop offset="1" stop-color="#7B2FF7"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 100 L40 92 L80 96 L120 74 L160 78 L200 50 L240 40 L300 14 L300 120 L0 120 Z" fill="url(#area)"/>
-              <path d="M0 100 L40 92 L80 96 L120 74 L160 78 L200 50 L240 40 L300 14" fill="none" stroke="url(#line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="300" cy="14" r="4.5" fill="#fff" stroke="#E0218A" stroke-width="3"/>
-            </svg>
-          </div>
-          <div class="hc-stats">
-            <div><div class="n grad">+218%</div><div class="t">Revenue</div></div>
-            <div><div class="n">−41%</div><div class="t">Cost / acq.</div></div>
-            <div><div class="n">3.2x</div><div class="t">LTV growth</div></div>
-          </div>
+<!-- ============ METRICS (dark) ============ -->
+<section class="sec-dark metrics">
+  <div class="wrap">
+    <div class="metrics-grid">
+      <div class="metric rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg></div><div class="num"><span class="num-mono" data-count="12">0</span><span class="suf">Cr+</span></div><div class="lbl">Ad spend managed (₹)</div></div>
+      <div class="metric rv rv-d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></div><div class="num"><span class="num-mono" data-count="3.8" data-dec="1">0</span><span class="suf">x</span></div><div class="lbl">Average blended ROAS</div></div>
+      <div class="metric rv rv-d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9.5 9 12 21 14.5 9"/></svg></div><div class="num"><span class="num-mono" data-count="40">0</span><span class="suf">+</span></div><div class="lbl">D2C brands scaled</div></div>
+      <div class="metric rv rv-d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M20.8 12.6a8.9 8.9 0 1 1-8.2-8.5"/><path d="m9 11 3 3L21 5"/></svg></div><div class="num"><span class="num-mono" data-count="92">0</span><span class="suf">%</span></div><div class="lbl">Stay past 6 months</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> The work</span>
+      <h2 class="disp rv rv-d1">Numbers we'd put<br>our name <span class="em">on.</span></h2>
+      <p class="sec-sub rv rv-d2">Real accounts, real ad spend, real revenue. Full screenshots and breakdowns on the call.</p>
+    </div>
+    <div class="work-grid">
+      <div class="case rv">
+        <div class="case-top"><span class="cat">Skincare · D2C</span><span class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M9 3h6v4a5 5 0 0 1-1 3l-1 1.4V21H11v-9.6L10 10a5 5 0 0 1-1-3V3Z"/><path d="M9 5h6"/></svg></span></div>
+        <div class="case-body">
+          <div class="big num-mono"><em>₹68L</em> / 90 days</div>
+          <p class="desc">Scaled from ₹7L/mo with a creative-first Meta rebuild. 41 ad variations tested in month one.</p>
+          <svg class="chart" viewBox="0 0 260 64" fill="none" aria-hidden="true"><path d="M2 56 40 50 78 52 116 40 154 34 192 20 230 14 258 6" stroke="#BB080B" stroke-width="3" stroke-linecap="round"/><circle cx="258" cy="6" r="5" fill="#BB080B"/></svg>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Meta Ads</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>4.2x ROAS</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>CRO</span></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PARTNER BANNER ===================== -->
-<section class="partners">
-  <div class="container">
-    <p class="partners-label">Certified &amp; partnered with the platforms that drive growth</p>
-    <div class="partners-row">
-      <!-- Meta -->
-      <div class="partner" aria-label="Meta Business Partner">
-        <svg viewBox="0 0 40 28" aria-hidden="true">
-          <defs><linearGradient id="meta" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0064E0"/><stop offset="1" stop-color="#0082FB"/></linearGradient></defs>
-          <path d="M3 20c0-7 3.5-13 8-13 3.3 0 5.6 3 7.2 6.2C16.7 16 15 20 11.8 20 9.6 20 8 18.4 8 15.6h3.2c0 1 .4 1.4.9 1.4 1.2 0 2.8-3.4 3.9-5.7C14.7 9 13.3 7.4 11.4 7.4 8.8 7.4 6.2 11.9 6.2 16.3 6.2 19 7.4 20 9 20v.0z" fill="url(#meta)"/>
-          <path d="M21 7c2.6 0 4.5 3 6 6 1.6 3.2 3 7 6.2 7C36 20 37 17.4 37 14.6c0-5.2-2.8-9.6-6.4-9.6-2 0-3.6 1.4-5 3.6l1.7 2.6C28.2 9.6 29.1 8.4 30.2 8.4c1.9 0 3.4 2.8 3.4 6.2 0 1.6-.5 2.4-1.4 2.4-1.3 0-2.4-2-3.6-4.4C27.2 9.6 24.9 5 21 5v2z" fill="url(#meta)"/>
-        </svg>
-        <span class="pname" style="color:#0064E0">Meta</span>
+      <div class="case rv rv-d1">
+        <div class="case-top"><span class="cat">Fashion · Dropship → Brand</span><span class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="m8 4-5 4 3 3 2-1v10h8V10l2 1 3-3-5-4a4 4 0 0 1-8 0Z"/></svg></span></div>
+        <div class="case-body">
+          <div class="big num-mono"><em>2.1x</em> AOV lift</div>
+          <p class="desc">Rebuilt the funnel — landing pages, bundles, post-purchase flows. Same traffic, double the order value.</p>
+          <svg class="chart" viewBox="0 0 260 64" fill="none" aria-hidden="true"><path d="M2 50 40 52 78 44 116 46 154 30 192 26 230 16 258 10" stroke="#BB080B" stroke-width="3" stroke-linecap="round"/><circle cx="258" cy="10" r="5" fill="#BB080B"/></svg>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Landing Pages</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Klaviyo</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Offers</span></div>
+        </div>
       </div>
-      <!-- Google Ads -->
-      <div class="partner" aria-label="Google Ads Partner">
-        <svg viewBox="0 0 28 28" aria-hidden="true">
-          <rect x="9" y="2.5" width="7" height="20" rx="3.5" transform="rotate(-28 12.5 12.5)" fill="#FBBC04"/>
-          <rect x="12.5" y="2.5" width="7" height="20" rx="3.5" transform="rotate(28 16 12.5)" fill="#4285F4"/>
-          <circle cx="7.5" cy="21" r="4" fill="#34A853"/>
-        </svg>
-        <span class="pname">Google Ads</span>
-      </div>
-      <!-- HubSpot -->
-      <div class="partner" aria-label="HubSpot Solutions Partner">
-        <svg viewBox="0 0 28 28" aria-hidden="true">
-          <circle cx="20" cy="8" r="3.4" fill="none" stroke="#FF7A59" stroke-width="2.4"/>
-          <circle cx="9" cy="19" r="5.2" fill="none" stroke="#FF7A59" stroke-width="2.4"/>
-          <path d="M9 13.8V8M14.6 9.4 11.8 16" stroke="#FF7A59" stroke-width="2.4" stroke-linecap="round"/>
-          <circle cx="9" cy="6.4" r="1.7" fill="#FF7A59"/>
-        </svg>
-        <span class="pname" style="color:#FF7A59">HubSpot</span>
-      </div>
-      <!-- Shopify -->
-      <div class="partner" aria-label="Shopify Partner">
-        <svg viewBox="0 0 28 28" aria-hidden="true">
-          <path d="M18.2 5.6c-.1-.1-.3-.1-.4-.1l-1.5.1c-.6-.6-1.1-1.2-1.9-1.2-.2 0-.4.1-.6.2-.6-.7-1.3-1-2-1-2.5 0-3.7 3.1-4.1 4.7l-1.8.5c-.6.2-.6.2-.7.7L3 22.4 16 24.7l4.5-1c-.3-2-2.3-17.9-2.3-18.1z" fill="#95BF47"/>
-          <path d="M17.8 5.5 17 5.6c0-.2-.1-.5-.2-.9l1 .8zM14 6.7l-2.6.8c.3-1.1.9-2.1 1.7-2.4.3.5.6 1.1.9 1.6z" fill="#fff"/>
-          <path d="M18.2 5.6c-.1-.1-.3-.1-.4-.1l-1.5.1V24.7l4.5-1c0-.1-2.3-17.9-2.6-18.1z" fill="#5E8E3E"/>
-          <path d="m13.8 11-.6 2s-.7-.4-1.6-.4c-1.3 0-1.4.8-1.4 1 0 1.1 3 1.5 3 4.2 0 2.1-1.4 3.5-3.2 3.5-2.2 0-3.4-1.4-3.4-1.4l.6-2s1.2 1 2.2 1c.6 0 .9-.5.9-.9 0-1.4-2.5-1.5-2.5-3.9 0-2.1 1.5-4.1 4.5-4.1 1.2 0 1.9.5 1.9.5z" fill="#fff"/>
-        </svg>
-        <span class="pname" style="color:#5E8E3E">Shopify</span>
-      </div>
-      <!-- Klaviyo -->
-      <div class="partner" aria-label="Klaviyo Master Partner">
-        <svg viewBox="0 0 28 28" aria-hidden="true">
-          <path d="M3 14 14 6l11 8-11 8L3 14z" fill="none"/>
-          <path d="M14 5 4 12.5h4L14 8l6 4.5h4L14 5z" fill="#0B0B0B"/>
-          <path d="M14 12 8 16.5h4L14 15l2 1.5h4L14 12z" fill="#0B0B0B"/>
-        </svg>
-        <span class="pname">Klaviyo</span>
+      <div class="case rv rv-d2">
+        <div class="case-top"><span class="cat">Home &amp; Living · D2C</span><span class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span></div>
+        <div class="case-body">
+          <div class="big num-mono"><em>₹1.2Cr</em> / 6 months</div>
+          <p class="desc">Zero-to-one launch: positioning, store build, Meta + Google full-funnel. Profitable from month two.</p>
+          <svg class="chart" viewBox="0 0 260 64" fill="none" aria-hidden="true"><path d="M2 58 40 56 78 48 116 42 154 38 192 24 230 18 258 4" stroke="#BB080B" stroke-width="3" stroke-linecap="round"/><circle cx="258" cy="4" r="5" fill="#BB080B"/></svg>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Full Funnel</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Google Ads</span><span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Launch</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== STATS ===================== -->
-<section class="section-sm">
-  <div class="container">
-    <div class="stats reveal">
-      <div class="stat"><div class="num grad"><span data-count="50" data-prefix="$" data-suffix="M+">$50M+</span></div><div class="cap">Ad spend managed</div></div>
-      <div class="stat"><div class="num"><span data-count="4.8" data-suffix="x">4.8x</span></div><div class="cap">Average client ROAS</div></div>
-      <div class="stat"><div class="num"><span data-count="120" data-suffix="+">120+</span></div><div class="cap">Brands scaled</div></div>
-      <div class="stat"><div class="num grad"><span data-count="218" data-suffix="%">218%</span></div><div class="cap">Avg. revenue lift</div></div>
+<!-- ============ SERVICES ============ -->
+<section class="sec sec-white" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> What we do</span>
+      <h2 class="disp rv rv-d1">One team. The whole<br><span class="em">growth engine.</span></h2>
+      <p class="sec-sub rv rv-d2">Everything between "ad clicked" and "order placed" — under one roof, so nothing falls between agencies.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Meta Ads Management</h3><p>Full-funnel Facebook &amp; Instagram — structure, testing cadence and scaling rules that survive CPM swings.</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="svc rv rv-d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Google Ads &amp; Shopping</h3><p>Search, PMax and Shopping feeds that capture the demand your Meta ads create — not brand-term vanity ROAS.</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="svc rv rv-d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg></div><h3>Creative Strategy &amp; UGC</h3><p>Hooks, scripts, editors and a weekly creative pipeline — the ad account is only as good as the ads.</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Landing Pages &amp; CRO</h3><p>Offer-led landing pages and store optimization, built and tested by us — the piece most ad agencies won't touch.</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="svc rv rv-d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg></div><h3>Email &amp; Retention</h3><p>Klaviyo flows, campaigns and win-backs that turn one-time buyers into 30–40% of monthly revenue.</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="svc rv rv-d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div><h3>AI Creative Testing</h3><p>AI-generated ad variations and angle mining at a volume human teams can't match — validated with real spend.</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVICES ===================== -->
-<section class="section cloud">
-  <div class="container">
-    <div class="head-block reveal">
-      <span class="eyebrow">What we do</span>
-      <h2>Full-funnel performance marketing, built to scale</h2>
-      <p class="lead">Every channel works toward one number: profitable growth. We plug into your brand as an extension of your team.</p>
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> The Fuel Framework</span>
+      <h2 class="disp rv rv-d1">From spark<br>to <span class="em">scale.</span></h2>
     </div>
-    <div class="cards">
-      <!-- Paid Social -->
-      <a href="services.html" class="card reveal">
-        <svg class="spark-burst" viewBox="0 0 24 24" fill="none" stroke="#E0218A" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></div>
-        <h3>Paid Social Advertising</h3>
-        <p>Meta, Instagram, and TikTok campaigns engineered around creative testing, audience signals, and a relentless focus on contribution margin.</p>
-        <span class="card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <!-- PPC -->
-      <a href="services.html" class="card reveal">
-        <svg class="spark-burst" viewBox="0 0 24 24" fill="none" stroke="#E0218A" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div>
-        <h3>Search &amp; Google Ads</h3>
-        <p>High-intent Search, Shopping, and PMax campaigns that capture demand at the moment of purchase — structured for efficient, scalable returns.</p>
-        <span class="card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <!-- Email & SMS -->
-      <a href="services.html" class="card reveal">
-        <svg class="spark-burst" viewBox="0 0 24 24" fill="none" stroke="#E0218A" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-        <h3>Email &amp; SMS Retention</h3>
-        <p>Klaviyo flows and campaigns that turn one-time buyers into loyal, high-LTV customers — automated welcome, cart, and post-purchase journeys.</p>
-        <span class="card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <!-- CRO -->
-      <a href="services.html" class="card reveal">
-        <svg class="spark-burst" viewBox="0 0 24 24" fill="none" stroke="#E0218A" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></div>
-        <h3>Conversion Optimization</h3>
-        <p>Landing pages, A/B testing, and funnel teardowns that lift conversion rate and AOV — so every click you pay for works harder.</p>
-        <span class="card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <!-- Creative -->
-      <a href="services.html" class="card reveal">
-        <svg class="spark-burst" viewBox="0 0 24 24" fill="none" stroke="#E0218A" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
-        <h3>Performance Creative</h3>
-        <p>Scroll-stopping ad creative and UGC built to convert — concepted, scripted, and iterated against live data, not guesswork.</p>
-        <span class="card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <!-- Analytics -->
-      <a href="services.html" class="card reveal">
-        <svg class="spark-burst" viewBox="0 0 24 24" fill="none" stroke="#E0218A" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M21.2 8A10 10 0 0 0 16 2.8V8h5.2z"/></svg></div>
-        <h3>Analytics &amp; Attribution</h3>
-        <p>Server-side tracking, dashboards, and blended-ROAS reporting so you always know exactly which dollar drives which sale.</p>
-        <span class="card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
+    <div class="proc-grid">
+      <div class="step rv"><span class="n">01</span><div class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></div><h3>Audit &amp; Angle Mining</h3><p>We tear down your account, funnel and competitors — and leave with 10+ testable angles before you pay a retainer.</p></div>
+      <div class="step rv rv-d1"><span class="n">02</span><div class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><path d="M12 3v3M18.4 5.6l-2.1 2.1M21 12h-3M5.6 5.6l2.1 2.1M3 12h3M12 21a6 6 0 0 0 6-6c0-3-2-4.5-3-6.5-.7 1.5-2 2.5-3.5 3C10 9 9 7.5 9.5 5 7 7 6 9.5 6 12a6 6 0 0 0 6 6Z" transform="translate(0 1)"/></svg></div><h3>Creative Sprint</h3><p>Two weeks of high-volume production: hooks, UGC, statics. The testing bench is stocked before launch day.</p></div>
+      <div class="step rv rv-d2"><span class="n">03</span><div class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><path d="M4.5 16.5 3 21l4.5-1.5L19 8a2.1 2.1 0 0 0-3-3L4.5 16.5Z"/><path d="M14 6.5 17.5 10M9 19c4-1 9-6 10-11"/></svg></div><h3>Launch &amp; Learn</h3><p>Structured testing with clear kill/scale rules. You see every number we see — live dashboard, weekly calls.</p></div>
+      <div class="step rv rv-d3"><span class="n">04</span><div class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Scale &amp; Compound</h3><p>Winners get budget, retention kicks in, channels stack. This is where ₹10L months become ₹1Cr months.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== PROCESS ===================== -->
-<section class="section dark">
-  <div class="container">
-    <div class="head-block reveal">
-      <span class="eyebrow">How we work</span>
-      <h2>A proven system, not a guessing game</h2>
-      <p class="lead">We've refined a four-stage operating model that takes the risk out of scaling paid acquisition.</p>
+<!-- ============ PRICING ============ -->
+<section class="sec sec-white" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Pricing</span>
+      <h2 class="disp rv rv-d1">Priced like a partner.<br>Not a <span class="em">vendor.</span></h2>
+      <p class="sec-sub rv rv-d2">We price the way the world's best agencies do — a flat base you can budget for, capped percentage of ad spend as you scale, and skin in the game on performance.</p>
     </div>
-    <div class="steps">
-      <div class="step reveal"><div class="step-n">01</div><h3>Audit &amp; Strategy</h3><p>We dive into your data, unit economics, and funnel to find the fastest path to profitable scale.</p></div>
-      <div class="step reveal"><div class="step-n">02</div><h3>Build &amp; Launch</h3><p>Tracking, creative, and campaign architecture are set up correctly from day one — no shortcuts.</p></div>
-      <div class="step reveal"><div class="step-n">03</div><h3>Test &amp; Optimize</h3><p>Daily optimization and rapid creative testing compound small wins into outsized returns.</p></div>
-      <div class="step reveal"><div class="step-n">04</div><h3>Scale &amp; Report</h3><p>We scale what works and report transparently on the metrics that move your bottom line.</p></div>
-    </div>
-  </div>
-</section>
 
-<!-- ===================== WHY US (split) ===================== -->
-<section class="section">
-  <div class="container">
-    <div class="split">
-      <div class="reveal">
-        <span class="eyebrow">Why AdFyrr</span>
-        <h2>Built for brands that want growth they can bank on</h2>
-        <p class="lead">We're not a vanity-metrics agency. We obsess over the numbers that show up in your P&amp;L — and we treat your budget like it's our own.</p>
-        <ul class="split-list">
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Senior talent on every account</b><span>No junior hand-offs. The strategists who win the work run the work.</span></div></li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Transparent, real-time reporting</b><span>Live dashboards and plain-English updates — you always know where every dollar goes.</span></div></li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Profit-first, full-funnel thinking</b><span>Acquisition, retention, and CRO working together toward contribution margin.</span></div></li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>No long lock-in contracts</b><span>We earn your business every month. Stay because of results, not paperwork.</span></div></li>
+    <div class="pmodel rv">
+      <span class="pm-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg><b>Flat retainer</b>&nbsp;— predictable, no surprise invoices</span>
+      <span class="pm-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M19 5 5 19M6.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM17.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg><b>% of ad spend</b>&nbsp;— industry standard 10–20%, ours capped lower</span>
+      <span class="pm-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg><b>Performance hybrid</b>&nbsp;— lower base, we earn on results</span>
+    </div>
+
+    <div class="price-grid">
+      <div class="plan rv">
+        <div class="phead"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span><span class="name">Ignite</span></div>
+        <div class="amt num-mono">₹24,999<small>/MO</small></div>
+        <div class="alt">or 10% of ad spend · whichever is higher</div>
+        <span class="spend"><svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg> Ad spend up to ₹1L/mo</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Meta ads management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>4 new creatives every month</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Landing page audit &amp; fixes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Weekly reporting call</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>One-time setup ₹9,999 (waived on 90-day sprint)</li>
         </ul>
-        <a href="about.html" class="btn btn-dark" style="margin-top:30px">Meet the team
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a class="btn btn-ink" href="contact.html">Book a Fuel Call</a>
+      </div>
+
+      <div class="plan feat rv rv-d1">
+        <span class="badge">Most chosen</span>
+        <div class="phead"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span class="name">Accelerate</span></div>
+        <div class="amt num-mono">₹44,999<small>/MO</small></div>
+        <div class="alt">or 8% of ad spend · whichever is higher</div>
+        <span class="spend"><svg viewBox="0 0 24 24" fill="none" stroke="#CFC9C3" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg> Ad spend ₹1–5L/mo</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Meta + Google full-funnel</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>10+ creatives &amp; UGC monthly</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Landing pages built &amp; tested</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Klaviyo flows &amp; campaigns</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Live dashboard + weekly strategy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E14548" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Setup fee waived</li>
+        </ul>
+        <a class="btn btn-yellow" href="contact.html">Book a Fuel Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="plan rv rv-d2">
+        <div class="phead"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2" stroke-linecap="round"><path d="M12 3c2 3 6 4 6 9a6 6 0 0 1-12 0c0-5 4-6 6-9Z"/><path d="M12 21a3.5 3.5 0 0 0 3.5-3.5c0-2-1.7-3-3.5-5-1.8 2-3.5 3-3.5 5A3.5 3.5 0 0 0 12 21Z"/></svg></span><span class="name">Full Throttle</span></div>
+        <div class="amt num-mono">₹74,999<small>/MO</small></div>
+        <div class="alt">or 6% of ad spend · whichever is higher</div>
+        <span class="spend"><svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"/></svg> Ad spend ₹5–10L/mo</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Everything in Accelerate</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>AI creative testing engine</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>New-channel launches</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Dedicated senior strategist</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Founder WhatsApp access</li>
+        </ul>
+        <a class="btn btn-ink" href="contact.html">Book a Fuel Call</a>
+      </div>
+    </div>
+
+    <!-- hybrid / growth partner -->
+    <div class="hybrid rv">
+      <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M8 12a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg></div>
+      <div>
+        <h3>Growth Partner — the hybrid model</h3>
+        <p>Spending ₹10L+/month? We drop the base to <b>₹49,999</b> and take <b>a small % of the revenue we add</b> above your current baseline. We only earn more when you make more — the model the fastest-growing agencies in the world are moving to.</p>
+      </div>
+      <a class="btn btn-red" href="contact.html">Apply for partnership <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <!-- guarantee -->
+    <div class="guarantee rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5L15.5 9"/></svg>
+      <div><b>The 90-Day Fuel Guarantee.</b><br><span>If we don't beat your current blended ROAS within the 90-day sprint, we work free until we do. That's the whole clause.</span></div>
+    </div>
+
+    <!-- comparison -->
+    <div class="cmp rv">
+      <h3>AdFyrr vs the <span class="em">alternatives</span></h3>
+      <div class="cmp-scroll">
+        <table>
+          <thead><tr><th></th><th>Freelancer</th><th>In-house team</th><th style="color:#BB080B">AdFyrr</th></tr></thead>
+          <tbody>
+            <tr><td class="rowlbl">True monthly cost</td><td>₹15–40K</td><td>₹2.5–4L (3+ hires)</td><td class="adf">₹25–75K flat</td></tr>
+            <tr><td class="rowlbl">Media buying + creative + CRO</td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>One skill only</span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Needs 3–4 hires</span></td><td class="adf"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>Full stack, one team</span></td></tr>
+            <tr><td class="rowlbl">Cross-account learnings</td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Limited</span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Your account only</span></td><td class="adf"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>40+ brands of data</span></td></tr>
+            <tr><td class="rowlbl">Ramp-up time</td><td>2–4 weeks</td><td>3–6 months hiring</td><td class="adf">Live in 14 days</td></tr>
+            <tr><td class="rowlbl">Risk if it doesn't work</td><td>Start over</td><td>Severance + restart</td><td class="adf">90-day guarantee, month-to-month</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> FAQ</span>
+      <h2 class="disp rv rv-d1">Asked on almost<br>every <span class="em">fuel call.</span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="rv" open>
+        <summary>How fast will we see results? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="ans">The first 2–3 weeks are structured testing — that's where the winning angles come from. Most brands see meaningful movement in 30–45 days, and the compounding shows in months 2–3. Anyone promising 5x ROAS in week one is selling you a screenshot.</div>
+      </details>
+      <details class="rv">
+        <summary>Why "flat retainer or % of spend, whichever is higher"? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="ans">It's how serious agencies stay aligned with you. A pure flat fee means we earn the same whether you scale or stall. A pure percentage tempts agencies to push spend you don't need. The industry standard is 10–20% of spend — ours is capped at 6–10% and only kicks in once your spend outgrows the flat fee.</div>
+      </details>
+      <details class="rv">
+        <summary>What's the minimum ad budget to work with you? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="ans">₹1L/month in ad spend for Ignite. Below that, testing is too slow to learn anything reliable — we'd rather you come back when the budget can actually buy data.</div>
+      </details>
+      <details class="rv">
+        <summary>Do you lock us into a long contract? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="ans">No. Retainers are month-to-month after an initial 90-day sprint — the honest minimum for creative testing to compound. 92% of clients stay past 6 months because the numbers work, not because a contract says so.</div>
+      </details>
+      <details class="rv">
+        <summary>Who actually works on our account? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="ans">The people you meet on the fuel call. We keep a small roster precisely so senior strategists run accounts — there is no hand-off to a junior after you sign.</div>
+      </details>
+      <details class="rv">
+        <summary>What is the 10-min Fuel Call? <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="ans">A short, direct call: we look at your numbers, tell you honestly whether we can move them, and show relevant case studies. If we're not the right fit, we'll say so and point you somewhere better.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="sec-dark final">
+  <svg class="spark-l" width="52" height="52" viewBox="0 0 60 60" fill="none" aria-hidden="true"><g stroke="#F5ED07" stroke-width="4" stroke-linecap="round"><path d="M30 4v12M30 44v12M4 30h12M44 30h12M12 12l8 8M40 40l8 8M48 12l-8 8M20 40l-8 8"/></g></svg>
+  <svg class="spark-r" width="40" height="40" viewBox="0 0 60 60" fill="none" aria-hidden="true"><g stroke="#E14548" stroke-width="5" stroke-linecap="round"><path d="M30 6v11M30 43v11M6 30h11M43 30h11"/></g></svg>
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:#F5ED07"><svg viewBox="0 0 14 14" fill="#F5ED07"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg> Limited roster — few slots per quarter</span>
+    <h2 class="disp rv rv-d1">Ready to fuel<br>your <span style="color:#E14548">growth?</span></h2>
+    <p class="sec-sub rv rv-d2" style="max-width:480px">Ten minutes. Your numbers, our honest read, and a plan either way.</p>
+    <a class="btn btn-yellow rv rv-d3" style="font-size:17px;padding:18px 36px" href="contact.html">Book a 10-Min Fuel Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <span class="word" style="font-size:22px;color:#F0EDEA">Ad<b style="color:#E14548">Fyrr</b></span>
         </a>
+        <p style="max-width:280px;margin-top:14px">Performance marketing for D2C brands that are done playing small.</p>
       </div>
-      <div class="split-visual reveal">
-        <div class="split-visual-inner">
-          <div class="hc-head" style="margin-bottom:24px"><span style="color:#A1A1AA;font-size:.82rem;font-weight:600">90-day client snapshot</span></div>
-          <div class="hc-metric" style="margin-bottom:24px"><div class="label" style="color:#A1A1AA;font-size:.8rem;font-weight:600">Monthly revenue</div><div class="value" style="font-size:2.4rem;font-weight:900">$1.42M <em style="color:#4ADE80;font-size:1rem;font-weight:700;margin-left:8px">▲ 184%</em></div></div>
-          <svg viewBox="0 0 300 110" preserveAspectRatio="none" style="width:100%;height:90px">
-            <defs><linearGradient id="area2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A020F0" stop-opacity=".4"/><stop offset="1" stop-color="#7B2FF7" stop-opacity="0"/></linearGradient><linearGradient id="line2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF4D8D"/><stop offset="1" stop-color="#7B2FF7"/></linearGradient></defs>
-            <path d="M0 95 L50 85 L100 88 L150 60 L200 64 L250 34 L300 10 L300 110 L0 110 Z" fill="url(#area2)"/>
-            <path d="M0 95 L50 85 L100 88 L150 60 L200 64 L250 34 L300 10" fill="none" stroke="url(#line2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;padding-top:22px;border-top:1px solid #2A2A2F">
-            <div><div style="background:linear-gradient(150deg,#FF4D8D,#7B2FF7);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;font-size:1.5rem">5.1x</div><div style="color:#A1A1AA;font-size:.78rem;font-weight:600">Blended ROAS</div></div>
-            <div><div style="color:#fff;font-weight:900;font-size:1.5rem">−38%</div><div style="color:#A1A1AA;font-size:.78rem;font-weight:600">CAC reduction</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="section cloud">
-  <div class="container">
-    <div class="head-block center reveal">
-      <span class="eyebrow centered">Client results</span>
-      <h2>Founders trust AdFyrr to fuel their growth</h2>
-    </div>
-    <div class="quotes">
-      <div class="quote reveal">
-        <div class="mark">"</div>
-        <p>AdFyrr rebuilt our entire paid acquisition engine. We went from break-even to a 4.6x blended ROAS in under three months. They genuinely care about our margins.</p>
-        <div class="who"><div class="avatar">JM</div><div><b>Jordan Mills</b><small>Founder, Lumen Skincare</small></div></div>
-      </div>
-      <div class="quote reveal">
-        <div class="mark">"</div>
-        <p>The most transparent agency we've worked with. Weekly reporting is crystal clear and the creative testing cadence is unreal. Revenue is up 180% year over year.</p>
-        <div class="who"><div class="avatar">SR</div><div><b>Sara Reyes</b><small>CMO, Northpeak Apparel</small></div></div>
-      </div>
-      <div class="quote reveal">
-        <div class="mark">"</div>
-        <p>They treat our budget like it's their own money. Email and SMS alone now drive 32% of revenue thanks to the flows AdFyrr built. A true growth partner.</p>
-        <div class="who"><div class="avatar">DK</div><div><b>Daniel Kwon</b><small>CEO, Brewhaus Coffee Co.</small></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CTA BAND ===================== -->
-<section class="section">
-  <div class="container">
-    <div class="cta-band reveal">
-      <div class="cta-inner">
-        <div>
-          <h2>Ready to fuel your growth?</h2>
-          <p>Get a free, no-obligation growth audit. We'll show you exactly where you're leaving revenue on the table — and how we'd fix it.</p>
-        </div>
-        <a href="contact.html" class="btn btn-primary" style="font-size:1.05rem;padding:17px 34px">Book your free audit
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-about">
-        <div class="footer-logo" style="color:#fff">
-          <img src="assets/logo-white.png" alt="AdFyrr" />
-        </div>
-        <p>AdFyrr is a premium performance marketing agency helping ambitious ecommerce and DTC brands turn ad spend into predictable, profitable growth.</p>
-      </div>
-      <div class="footer-col">
+      <div>
         <h4>Company</h4>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="#work">Work</a><a href="services.html">Services</a><a href="#pricing">Pricing</a><a href="about.html">About</a><a href="india.html">India Clients</a><a href="contact.html">Contact</a>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="services.html">Paid Social</a>
-        <a href="services.html">Google Ads</a>
-        <a href="services.html">Email &amp; SMS</a>
-        <a href="services.html">Conversion Rate</a>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund-policy.html">Refund Policy</a>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Contact</h4>
-        <ul class="footer-contact">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>30 N Gould St Ste R,<br/>Sheridan, WY 82801, USA</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13478018251">+1 347 801 8251</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:support@adfyrr.com">support@adfyrr.com</a></li>
-        </ul>
+        <p>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</p>
+        <p style="margin-top:10px">+1 347 801 8251<br>hello@adfyrr.com</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>© <span data-year>2026</span> AdFyrr. All rights reserved.</div>
-      <div class="legal-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="refund-policy.html">Refund Policy</a>
-      </div>
-      <div class="footer-socials">
-        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.34v-7H6v7h2.34zM7.17 9.3a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17.34v-3.84c0-2.05-1.1-3-2.56-3-1.18 0-1.71.65-2 1.11v-.95H11.1c.03.66 0 7 0 7h2.34v-3.91c0-.21.01-.42.08-.57.18-.42.56-.86 1.21-.86.86 0 1.2.65 1.2 1.6v3.74H18z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
-      </div>
+    <div class="foot-bottom">
+      <span>© 2026 ADFYRR. ALL RIGHTS RESERVED.</span>
+      <span>FUEL YOUR GROWTH ✦</span>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  var nums = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+
+  function animate(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec')||'0',10);
+    if(!reduced){
+      var t0 = null, dur = 1400;
+      var frame = function(t){
+        if(!t0) t0 = t;
+        var p = Math.min((t-t0)/dur,1);
+        var eased = 1-Math.pow(1-p,3);
+        el.childNodes[0].nodeValue = (target*eased).toFixed(dec);
+        if(p<1) requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
+    }
+    setTimeout(function(){el.childNodes[0].nodeValue = target.toFixed(dec);}, reduced ? 0 : 1700);
+  }
+
+  if(reduced){
+    els.forEach(function(e){e.classList.add('in');});
+    nums.forEach(animate);
+    return;
+  }
+
+  var last = 0;
+  function reveal(){
+    var h = window.innerHeight;
+    els = els.filter(function(e){
+      var r = e.getBoundingClientRect();
+      if(r.top < h - 24 || r.bottom < h){e.classList.add('in');return false;}
+      return true;
+    });
+    nums = nums.filter(function(n){
+      var r = n.getBoundingClientRect();
+      if(r.top < h && r.bottom > 0){animate(n);return false;}
+      return true;
+    });
+  }
+  function onScroll(){
+    var now = Date.now();
+    if(now - last > 80){last = now;reveal();}
+    else{clearTimeout(onScroll.t);onScroll.t = setTimeout(reveal, 90);}
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  window.addEventListener('load', reveal);
+  reveal();
+  setTimeout(reveal, 350);
+})();
+</script>
+
 </body>
 </html>
