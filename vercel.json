@@ -39,6 +39,22 @@
     {
       "source": "/thank-you.html",
       "destination": "/courses/thank-you.html"
+    },
+    {
+      "source": "/meta-ads-playbook/",
+      "destination": "/courses/1300-orders-playbook.html"
+    },
+    {
+      "source": "/meta-ads-playbook/checkout/",
+      "destination": "/courses/checkout.html"
+    },
+    {
+      "source": "/meta-ads-playbook/thank-you/",
+      "destination": "/courses/thank-you.html"
+    },
+    {
+      "source": "/admin/",
+      "destination": "/admin.html"
     }
   ],
   "headers": [
