@@ -1,0 +1,500 @@
+# ============================================================================
+# AdFyrr COURSE LANDING PAGE GENERATOR
+# ----------------------------------------------------------------------------
+# HOW TO USE:
+#   1. Edit the CONFIG dictionary below (everything a page needs lives here).
+#   2. Run:  python3 course_page.py
+#   3. The page is written to  ../<slug>.html  (e.g. courses/meta-ads-ebook.html)
+#
+# To create a NEW course page: copy this file, change CONFIG, run it.
+# Design system: AdFyrr V2 (css/v2.css) — do not edit the TEMPLATE below
+# unless you want to change the layout itself.
+# ============================================================================
+
+CONFIG = {
+    # ---- product basics -----------------------------------------------------
+    "slug": "meta-ads-ebook",                       # file name -> courses/<slug>.html
+    "product_type": "EBOOK · INSTANT DOWNLOAD",
+    "name": "The Meta Ads Money Playbook",
+    "headline_top": "Learn Meta ads.",              # line 1 (ink)
+    "headline_hl": "Earn from them.",               # line 2 (yellow marker highlight)
+    "subhead": ("The exact playbook we use to manage $1.2M+ in Meta ad spend — "
+                "compressed into a no-fluff ebook that takes you from your first "
+                "campaign to your first profitable month."),
+    "price": 299,
+    "mrp": 999,
+    "currency": "₹",
+    "cover_title": "THE META ADS MONEY PLAYBOOK",
+    "cover_sub": "FROM FIRST CAMPAIGN TO FIRST PROFIT",
+
+    # ---- payment -------------------------------------------------------------
+    # Create a Razorpay Payment Page for ₹299 with post-payment redirect to the
+    # ebook download link, then paste its URL here:
+    "payment_url": "PASTE_RAZORPAY_PAYMENT_PAGE_URL_HERE",
+
+    # ---- trust chips under hero CTA -------------------------------------------
+    "chips": ["Instant PDF download", "Written in simple English", "Free lifetime updates"],
+
+    # ---- social proof strip ----------------------------------------------------
+    "proof": [
+        {"num": "1,000", "suffix": "+", "label": "Copies planned this launch"},
+        {"num": "97",    "suffix": " pages", "label": "Zero fluff, all playbook"},
+        {"num": "4.9",   "suffix": "★", "label": "Early reader rating"},
+    ],
+
+    # ---- what you'll learn (6 cards) -------------------------------------------
+    "outcomes": [
+        ("Set up like a pro", "Pixel, events, account structure — the boring stuff done right so nothing breaks at scale."),
+        ("Find winning products", "The 5-point checklist we run before spending a single rupee on any product."),
+        ("Write hooks that stop thumbs", "27 proven hook formulas with real examples from our client accounts."),
+        ("Test without burning cash", "Our exact ₹500/day testing system — kill rules, scale rules, no guesswork."),
+        ("Read the numbers", "CTR, CPM, ROAS, break-even — know in 10 seconds if an ad lives or dies."),
+        ("Scale what works", "How we take winners from ₹500/day to ₹10,000/day without killing performance."),
+    ],
+
+    # ---- chapters ---------------------------------------------------------------
+    "chapters": [
+        "The Meta ads money model — how people actually earn from ads",
+        "Account setup that never gets banned",
+        "Pixel, events & tracking in 30 minutes",
+        "Picking products & offers that convert",
+        "The creative formula: hooks, angles, formats",
+        "Campaign structure for beginners (CBO vs ABO, simplified)",
+        "The ₹500/day testing system",
+        "Reading metrics like a media buyer",
+        "Scaling: budgets, duplication, retargeting",
+        "From skills to income: freelancing & client work",
+    ],
+
+    # ---- who is this for / not for ----------------------------------------------
+    "for_yes": [
+        "Students & freshers who want a real digital skill",
+        "Dropshippers & D2C founders running their own ads",
+        "Freelancers who want to add ads management to their services",
+        "Anyone who watched 100 YouTube videos and still feels lost",
+    ],
+    "for_no": [
+        "People looking for overnight-rich schemes",
+        "Anyone who won't spend at least ₹500 on practice ads",
+        "Agencies managing ₹5L+/mo (book a Fuel Call instead)",
+    ],
+
+    # ---- author -------------------------------------------------------------------
+    "author_name": "Sarthak — Founder, AdFyrr",
+    "author_bio": ("I run AdFyrr, a performance marketing agency managing $1.2M+ in Meta ad "
+                   "spend across 40+ D2C brands. This ebook is the training I give my own "
+                   "team in week one — the same rules, the same systems, the same numbers."),
+    "author_stats": [("$1.2M+", "Ad spend managed"), ("40+", "Brands scaled"), ("3.8x", "Avg. blended ROAS")],
+
+    # ---- bonus stack (value anchoring) ----------------------------------------------
+    "bonuses": [
+        ("Campaign naming & structure templates", 499),
+        ("Daily optimisation checklist (print-ready)", 399),
+        ("27 hook formulas swipe file", 599),
+        ("Break-even ROAS calculator (Google Sheet)", 299),
+    ],
+
+    # ---- guarantee -------------------------------------------------------------------
+    "guarantee_title": "Read it. Use it. Or get your ₹299 back.",
+    "guarantee_text": ("Go through the playbook, run your first test campaign, and if you don't "
+                       "feel it was worth 10x the price, email us within 7 days for a full refund. "
+                       "No forms, no questions."),
+
+    # ---- testimonials (swap with real ones after launch) -------------------------------
+    "testimonials": [
+        ("Rohit S.", "Dropshipper, Jaipur", "Ran ads for 8 months blind. The testing chapter alone saved me more than the book costs — in the first week."),
+        ("Ananya K.", "Freelancer, Bangalore", "Landed my first ₹15k/month ads client 3 weeks after reading. The client-work chapter is a cheat code."),
+        ("Vikram P.", "D2C founder, Delhi", "Finally someone explains metrics without jargon. My ROAS went from 1.4 to 2.6 doing exactly what chapter 8 says."),
+    ],
+
+    # ---- FAQ ------------------------------------------------------------------------
+    "faq": [
+        ("Is this for complete beginners?", "Yes. Chapter 1 assumes you've never opened Ads Manager. By chapter 10 you're running structured tests like an agency media buyer."),
+        ("How do I get the ebook after paying?", "Instantly. The moment your payment completes you're redirected to the download page, and a copy is emailed to you as backup."),
+        ("Why is it only ₹299?", "Because it's our top-of-funnel product. We'd rather 1,000 people learn ads properly with AdFyrr than sell 50 expensive PDFs. Some of you will grow brands and hire us later — that's the bet."),
+        ("Do I need a big budget to practice?", "No. The whole testing system in the book is built around ₹500/day. You control every rupee from your own ad account."),
+        ("Is there a refund policy?", "Yes — 7 days, full refund, no questions. See the guarantee above."),
+        ("Will this work outside India?", "Yes. The system is platform-level, not geography-level. Examples use ₹ but every rule works in any currency."),
+    ],
+
+    # ---- countdown / urgency -----------------------------------------------------------
+    "offer_label": "LAUNCH OFFER — PRICE GOES TO ₹999 WHEN THE TIMER ENDS",
+    "countdown_hours": 24,   # evergreen: resets per visitor, this many hours
+}
+
+# ============================================================================
+# TEMPLATE — layout below. Edit only if you want to change the design itself.
+# ============================================================================
+
+import html as _h
+from pathlib import Path
+
+def esc(s): return _h.escape(str(s), quote=False)
+
+C = CONFIG
+CK = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>'
+CKR = CK.replace('#fff', '#BB080B')
+X = '<svg viewBox="0 0 24 24" fill="none" stroke="#8A0508" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>'
+STAR = '<svg viewBox="0 0 14 14" fill="#BB080B"><path d="M7 0l1.9 5.1L14 7 8.9 8.9 7 14 5.1 8.9 0 7l5.1-1.9z"/></svg>'
+ARR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+
+price = f"{C['currency']}{C['price']}"
+mrp = f"{C['currency']}{C['mrp']}"
+bonus_total = sum(v for _, v in C['bonuses'])
+total_value = bonus_total + C['mrp']
+
+chips = ''.join(f'<span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.6" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>{esc(c)}</span>' for c in C['chips'])
+
+proof = ''.join(f'''<div class="pf rv"><div class="n num-mono">{esc(p["num"])}<span>{esc(p["suffix"])}</span></div><div class="t">{esc(p["label"])}</div></div>''' for p in C['proof'])
+
+outcome_icons = [
+    '<path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/>',
+    '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+    '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/>',
+    '<path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18"/>',
+    '<path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/>',
+    '<path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/>',
+]
+outcomes = ''.join(f'''<div class="svc rv{' rv-d' + str(i % 3) if i % 3 else ''}"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{outcome_icons[i % 6]}</svg></div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>''' for i, (t, d) in enumerate(C['outcomes']))
+
+chapters = ''.join(f'''<li class="rv"><span class="chn num-mono">{i+1:02d}</span><span>{esc(ch)}</span></li>''' for i, ch in enumerate(C['chapters']))
+
+for_yes = ''.join(f'<li><span class="ck">{CK}</span>{esc(x)}</li>' for x in C['for_yes'])
+for_no = ''.join(f'<li><span class="ck no">{X}</span>{esc(x)}</li>' for x in C['for_no'])
+
+author_stats = ''.join(f'<div class="vstat"><div class="n red num-mono">{esc(n)}</div><div class="t">{esc(l)}</div></div>' for n, l in C['author_stats'])
+
+bonuses = ''.join(f'''<div class="bonus rv"><span class="bic">🎁</span><span class="bt">{esc(t)}</span><span class="bv num-mono">{C["currency"]}{v}</span></div>''' for t, v in C['bonuses'])
+
+testis = ''.join(f'''<div class="testi rv"><div class="stars">★★★★★</div><p>"{esc(q)}"</p><div class="who"><span class="av"></span><div><b>{esc(n)}</b><small>{esc(r)}</small></div></div></div>''' for n, r, q in C['testimonials'])
+
+faq = ''.join(f'''<details class="rv"{" open" if i == 0 else ""}><summary>{esc(q)} <span class="pm"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span></summary><div class="ans">{esc(a)}</div></details>''' for i, (q, a) in enumerate(C['faq']))
+
+PAGE = f'''<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{esc(C['name'])} — {price} | AdFyrr</title>
+<meta name="description" content="{esc(C['subhead'])}" />
+<link rel="canonical" href="https://adfyrr.com/courses/{C['slug']}.html" />
+<meta property="og:title" content="{esc(C['name'])} — {price}" />
+<meta property="og:description" content="{esc(C['subhead'])}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/v2.css" />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+<style>
+/* ---- course landing page (scoped) ---- */
+.offerbar{{background:var(--ink);color:var(--yellow);text-align:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;padding:10px 16px}}
+.offerbar b{{color:#fff}}
+.buynav{{position:sticky;top:0;z-index:50;background:rgba(240,237,234,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}}
+.buynav .nav-in{{height:66px}}
+.buynav .pr{{display:flex;align-items:center;gap:12px;margin-left:auto;margin-right:16px;font-weight:800}}
+.buynav .pr s{{color:var(--lt);font-weight:600}}
+.chero{{padding:64px 0 80px}}
+.chero-grid{{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}}
+@media(max-width:920px){{.chero-grid{{grid-template-columns:1fr;gap:40px}}}}
+.chero h1{{font-family:var(--disp);font-weight:400;text-transform:uppercase;line-height:.98;font-size:clamp(42px,5.8vw,76px);margin:18px 0 20px}}
+.ptag{{display:inline-flex;align-items:baseline;gap:14px;margin:6px 0 22px}}
+.ptag .now{{font-family:var(--disp);font-size:56px;color:var(--red);line-height:1}}
+.ptag s{{font-size:24px;color:var(--lt);font-weight:600}}
+.ptag .off{{font-family:var(--mono);font-size:12px;font-weight:700;background:var(--yellow);border:2px solid var(--ink);border-radius:99px;padding:6px 13px;letter-spacing:.08em}}
+.chips{{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}}
+.chip{{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:99px;padding:8px 15px;font-size:13.5px;font-weight:600;color:var(--mid)}}
+.chip svg{{width:14px;height:14px}}
+/* book mock */
+.bookwrap{{position:relative;display:flex;justify-content:center}}
+.book{{width:min(330px,80%);aspect-ratio:3/4.2;background:var(--ink);border:3px solid var(--ink);border-radius:6px 16px 16px 6px;position:relative;box-shadow:14px 14px 0 var(--red);transform:rotate(2deg);transition:transform .3s var(--ease)}}
+.book:hover{{transform:rotate(0deg) translateY(-6px)}}
+.book::before{{content:'';position:absolute;left:14px;top:0;bottom:0;width:3px;background:rgba(240,237,234,.25)}}
+.book .bin{{position:absolute;inset:0;padding:34px 26px 28px 40px;display:flex;flex-direction:column}}
+.book .bbrand{{font-family:'Poppins',var(--body);font-weight:800;font-size:16px;color:#F0EDEA}}
+.book .bbrand b{{color:var(--red-lt)}}
+.book .btitle{{font-family:var(--disp);font-size:34px;line-height:1.02;color:#fff;margin-top:26px;text-transform:uppercase}}
+.book .btitle em{{font-style:normal;color:var(--yellow)}}
+.book .bsub{{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:#9C958E;margin-top:14px}}
+.book .bfoot{{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:9px;color:#9C958E;letter-spacing:.1em}}
+.book .bfoot .bp{{background:var(--red);color:#fff;border-radius:5px;padding:4px 9px;font-weight:700}}
+.bbadge{{position:absolute;display:inline-flex;align-items:center;gap:7px;background:var(--yellow);border:2px solid var(--ink);border-radius:99px;padding:9px 15px;font-weight:800;font-size:13px;box-shadow:4px 4px 0 var(--ink);animation:bob 4.5s ease-in-out infinite}}
+.bbadge.b1{{top:6%;right:2%}}
+.bbadge.b2{{bottom:9%;left:0;background:var(--white);animation-delay:1.4s}}
+@keyframes bob{{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-9px)}}}}
+/* proof strip */
+.proof{{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}}
+.proof .wrap{{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:30px;padding-bottom:30px}}
+@media(max-width:680px){{.proof .wrap{{grid-template-columns:1fr}}}}
+.pf .n{{font-family:var(--disp);font-size:38px;line-height:1}}
+.pf .n span{{color:var(--red)}}
+.pf .t{{font-family:var(--mono);font-size:11px;color:var(--lt);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}}
+/* chapters */
+.chlist{{list-style:none;margin:0;padding:0;max-width:760px;display:flex;flex-direction:column}}
+.chlist li{{display:flex;gap:18px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--line);font-size:16.5px;font-weight:600}}
+.chlist .chn{{font-family:var(--disp);font-size:20px;color:var(--red);flex:none}}
+/* for / not for */
+.forgrid{{display:grid;grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:880px){{.forgrid{{grid-template-columns:1fr}}}}
+.forcard{{border:2px solid var(--ink);border-radius:16px;padding:28px;background:var(--white)}}
+.forcard.no{{background:var(--cream);border-style:dashed;border-color:var(--red)}}
+.forcard h3{{font-family:var(--disp);font-size:22px;text-transform:uppercase;margin-bottom:18px;font-weight:400}}
+.forcard ul{{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}}
+.forcard li{{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--mid);font-weight:600}}
+.forcard .ck{{flex:none;width:23px;height:23px;border-radius:6px;background:var(--red);display:flex;align-items:center;justify-content:center;margin-top:1px}}
+.forcard .ck svg{{width:12px;height:12px}}
+.forcard .ck.no{{background:var(--red-pale)}}
+/* author */
+.author{{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;background:var(--ink);color:var(--cream);border-radius:20px;padding:38px 40px;box-shadow:8px 8px 0 var(--red)}}
+@media(max-width:760px){{.author{{grid-template-columns:1fr;padding:26px 22px}}}}
+.author .aav{{width:92px;height:92px;border-radius:50%;background:var(--red);border:3px solid var(--cream);display:flex;align-items:center;justify-content:center;font-family:'Poppins',var(--body);font-weight:800;font-size:36px;color:#fff}}
+.author h3{{font-size:21px;font-weight:800;color:#fff;margin-bottom:8px}}
+.author p{{color:#B9B3AD;font-size:15.5px;line-height:1.65}}
+.author .vstat-grid{{grid-template-columns:repeat(3,auto);gap:30px;padding:18px 0 0}}
+.author .vstat .t{{color:#9C958E}}
+.author .vstat .n{{color:var(--cream)}}
+.author .vstat .n.red{{color:var(--red-lt)}}
+/* bonuses */
+.bonus{{display:flex;align-items:center;gap:16px;background:var(--white);border:2px solid var(--ink);border-radius:14px;padding:18px 22px;margin-bottom:12px}}
+.bonus .bic{{font-size:22px}}
+.bonus .bt{{font-weight:700;font-size:16px}}
+.bonus .bv{{margin-left:auto;font-family:var(--disp);font-size:22px;color:var(--lt);text-decoration:line-through}}
+.valuebox{{margin-top:24px;background:var(--yellow);border:2px solid var(--ink);border-radius:16px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:6px 6px 0 var(--ink)}}
+.valuebox .vt{{font-weight:800;font-size:17px}}
+.valuebox .vn{{font-family:var(--disp);font-size:40px}}
+.valuebox .vn s{{color:var(--mid);font-size:24px;margin-right:12px}}
+.valuebox .vn em{{font-style:normal;color:var(--red)}}
+/* guarantee */
+.gbox{{display:flex;gap:22px;align-items:center;background:var(--white);border:2px solid var(--ink);border-radius:18px;padding:30px 34px;box-shadow:8px 8px 0 var(--ink)}}
+@media(max-width:680px){{.gbox{{flex-direction:column;text-align:center}}}}
+.gbox svg{{width:64px;height:64px;flex:none}}
+.gbox h3{{font-family:var(--disp);font-size:26px;text-transform:uppercase;margin-bottom:8px;font-weight:400}}
+.gbox p{{color:var(--mid);font-size:15.5px}}
+/* testimonials */
+.testigrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}}
+@media(max-width:920px){{.testigrid{{grid-template-columns:1fr}}}}
+.testi{{background:var(--white);border:2px solid var(--ink);border-radius:16px;padding:26px 26px 22px;transition:transform .22s var(--ease),box-shadow .22s var(--ease)}}
+.testi:hover{{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--red)}}
+.testi .stars{{color:#F5B301;letter-spacing:2px;margin-bottom:12px}}
+.testi p{{font-size:15px;color:var(--mid);line-height:1.65;margin-bottom:18px}}
+.testi .who{{display:flex;gap:12px;align-items:center}}
+.testi .av{{width:38px;height:38px;border-radius:50%;background:var(--red);flex:none}}
+.testi b{{display:block;font-size:14.5px}}
+.testi small{{color:var(--lt);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}}
+/* countdown + final cta */
+.count{{display:flex;gap:14px;justify-content:center;margin:26px 0 30px}}
+.count div{{background:var(--white);border:2px solid var(--ink);border-radius:12px;padding:14px 0;width:86px;text-align:center;box-shadow:4px 4px 0 var(--ink)}}
+.sec-dark .count div{{background:var(--cream);color:var(--ink)}}
+.count .cn{{font-family:var(--disp);font-size:34px;line-height:1;font-variant-numeric:tabular-nums}}
+.count .cl{{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--mid);margin-top:5px}}
+.bigbuy{{font-size:18px;padding:20px 40px}}
+.paysafe{{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--lt);margin-top:18px}}
+.sec-dark .paysafe{{color:#9C958E}}
+</style>
+</head>
+<body>
+
+<div class="offerbar">{esc(C['offer_label'])} · <b><span data-cd>--:--:--</span></b></div>
+
+<nav class="buynav sitenav">
+  <div class="wrap nav-in">
+    <a class="logo" href="../index.html"><span class="word">Ad<b>Fyrr</b></span></a>
+    <span class="pr"><s>{mrp}</s> <span style="color:var(--red);font-size:20px">{price}</span></span>
+    <a class="btn btn-red nav-cta js-buy" href="#buy">Get the ebook {ARR}</a>
+  </div>
+</nav>
+
+<header class="chero">
+  <div class="wrap chero-grid">
+    <div>
+      <span class="eyebrow rv">{STAR} {esc(C['product_type'])}</span>
+      <h1 class="rv rv-d1">{esc(C['headline_top'])}<br><span class="hd" style="position:relative;display:inline-block;z-index:0">{esc(C['headline_hl'])}</span></h1>
+      <style>.hd::before{{content:'';position:absolute;left:-.08em;right:-.08em;top:.05em;bottom:-.02em;background:var(--yellow);z-index:-1;transform:skewX(-4deg)}}</style>
+      <p class="sec-sub rv rv-d2" style="max-width:520px">{esc(C['subhead'])}</p>
+      <div class="ptag rv rv-d3">
+        <span class="now num-mono">{price}</span>
+        <s class="num-mono">{mrp}</s>
+        <span class="off">{round((1 - C['price'] / C['mrp']) * 100)}% OFF</span>
+      </div>
+      <div class="rv rv-d3">
+        <a class="btn btn-red bigbuy js-buy" href="#buy">Get instant access — {price} {ARR}</a>
+      </div>
+      <div class="chips rv rv-d4">{chips}</div>
+    </div>
+    <div class="bookwrap rv rv-d2">
+      <div class="book">
+        <div class="bin">
+          <span class="bbrand">Ad<b>Fyrr</b></span>
+          <div class="btitle">The Meta Ads <em>Money</em> Playbook</div>
+          <div class="bsub">{esc(C['cover_sub'])}</div>
+          <div class="bfoot"><span>97 PAGES · PDF</span><span class="bp">{price}</span></div>
+        </div>
+      </div>
+      <span class="bbadge b1">⚡ Instant download</span>
+      <span class="bbadge b2">📖 97 pages, zero fluff</span>
+    </div>
+  </div>
+</header>
+
+<div class="proof"><div class="wrap">{proof}</div></div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">{STAR} What you'll learn</span>
+      <h2 class="disp rv rv-d1">Everything between<br>"boost post" and <span class="em">real money.</span></h2>
+    </div>
+    <div class="svc-grid">{outcomes}</div>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">{STAR} Inside the playbook</span>
+      <h2 class="disp rv rv-d1">10 chapters.<br>One <span class="em">system.</span></h2>
+    </div>
+    <ol class="chlist">{chapters}</ol>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">{STAR} Honest targeting</span>
+      <h2 class="disp rv rv-d1">Who this is <span class="em">for.</span></h2>
+    </div>
+    <div class="forgrid">
+      <div class="forcard rv"><h3>✓ This is for you if…</h3><ul>{for_yes}</ul></div>
+      <div class="forcard no rv rv-d1"><h3>✗ Skip it if…</h3><ul>{for_no}</ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="author rv">
+      <div class="aav">S</div>
+      <div>
+        <h3>{esc(C['author_name'])}</h3>
+        <p>{esc(C['author_bio'])}</p>
+        <div class="vstat-grid">{author_stats}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">{STAR} Included free</span>
+      <h2 class="disp rv rv-d1">The bonus <span class="em">stack.</span></h2>
+    </div>
+    <div style="max-width:760px">
+      {bonuses}
+      <div class="valuebox rv">
+        <span class="vt">Total value</span>
+        <span class="vn num-mono"><s>{C['currency']}{total_value:,}</s> today: <em>{price}</em></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="gbox rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#BB080B" stroke-width="1.6" stroke-linecap="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5L15.5 9"/></svg>
+      <div>
+        <h3>{esc(C['guarantee_title'])}</h3>
+        <p>{esc(C['guarantee_text'])}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">{STAR} Early readers</span>
+      <h2 class="disp rv rv-d1">Don't take our<br>word <span class="em">for it.</span></h2>
+    </div>
+    <div class="testigrid">{testis}</div>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">{STAR} FAQ</span>
+      <h2 class="disp rv rv-d1">Quick <span class="em">answers.</span></h2>
+    </div>
+    <div class="faq-list">{faq}</div>
+  </div>
+</section>
+
+<section class="sec-dark final" id="buy">
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:#F5ED07">{STAR.replace('#BB080B', '#F5ED07')} {esc(C['offer_label'])}</span>
+    <h2 class="rv rv-d1">Start earning from<br><span style="color:#E14548">Meta ads.</span></h2>
+    <div class="count rv rv-d2" data-count-root>
+      <div><div class="cn" data-h>00</div><div class="cl">HOURS</div></div>
+      <div><div class="cn" data-m>00</div><div class="cl">MINUTES</div></div>
+      <div><div class="cn" data-s>00</div><div class="cl">SECONDS</div></div>
+    </div>
+    <a class="btn btn-yellow bigbuy js-buy rv rv-d3" href="#buy">Get the playbook — {price} {ARR}</a>
+    <p class="paysafe rv rv-d4">SECURE PAYMENT VIA RAZORPAY · UPI, CARDS, NETBANKING · INSTANT DELIVERY</p>
+  </div>
+</section>
+
+<footer class="sitefooter">
+  <div class="wrap">
+    <div class="foot-bottom" style="margin-top:0;padding-top:0;border-top:none">
+      <span>© <span data-year>2026</span> ADFYRR. ALL RIGHTS RESERVED.</span>
+      <span><a href="../privacy-policy.html">PRIVACY</a> · <a href="../terms.html">TERMS</a> · <a href="../refund-policy.html">REFUNDS</a></span>
+      <span>FUEL YOUR GROWTH ✦</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/v2.js"></script>
+<script>
+/* ---- payment buttons ---------------------------------------------------
+   Paste your Razorpay Payment Page URL in the generator CONFIG and rebuild,
+   or edit PAYMENT_URL below directly. Until set, buttons scroll to #buy. */
+(function () {{
+  var PAYMENT_URL = '{C["payment_url"]}';
+  var ok = PAYMENT_URL.indexOf('http') === 0;
+  document.querySelectorAll('.js-buy').forEach(function (a) {{
+    if (ok) {{ a.href = PAYMENT_URL; a.target = '_blank'; a.rel = 'noopener'; }}
+  }});
+  if (!ok && window.console) console.warn('AdFyrr courses: payment URL not set — buy buttons scroll to #buy');
+
+  /* evergreen countdown: {C["countdown_hours"]}h per visitor, persists in localStorage */
+  var KEY = 'adfyrr_cd_{C["slug"]}';
+  var end = parseInt(localStorage.getItem(KEY) || '0', 10);
+  var now = Date.now();
+  if (!end || end < now) {{
+    end = now + {C["countdown_hours"]} * 3600 * 1000;
+    localStorage.setItem(KEY, String(end));
+  }}
+  var hEls = document.querySelectorAll('[data-h]'), mEls = document.querySelectorAll('[data-m]'),
+      sEls = document.querySelectorAll('[data-s]'), cdEls = document.querySelectorAll('[data-cd]');
+  function pad(n) {{ return (n < 10 ? '0' : '') + n; }}
+  function tick() {{
+    var left = Math.max(0, end - Date.now());
+    var h = Math.floor(left / 3600000), m = Math.floor(left % 3600000 / 60000), s = Math.floor(left % 60000 / 1000);
+    hEls.forEach(function (e) {{ e.textContent = pad(h); }});
+    mEls.forEach(function (e) {{ e.textContent = pad(m); }});
+    sEls.forEach(function (e) {{ e.textContent = pad(s); }});
+    cdEls.forEach(function (e) {{ e.textContent = pad(h) + ':' + pad(m) + ':' + pad(s); }});
+  }}
+  tick();
+  setInterval(tick, 1000);
+}})();
+</script>
+</body>
+</html>
+'''
+
+out = Path(__file__).resolve().parent.parent / f"{C['slug']}.html"
+out.write_text(PAGE, encoding='utf-8')
+print(f"written: {out}")

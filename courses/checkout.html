@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Secure checkout — 0 → 1300 Orders Playbook | AdFyrr</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/v2.css" />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+<style>
+:root{--green:#0E9F4F;--green-t:#E7F6EE;--blue:#2563EB;--blue-t:#E9F0FE;--orange:#F97316;--orange-t:#FEF1E7}
+body{font-size:16.5px;background:var(--cream)}
+
+/* header */
+.cohead{background:#fff;border-bottom:2px solid var(--ink)}
+.cohead .in{max-width:1080px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;gap:16px}
+.cohead .secure{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--green)}
+.cohead .secure svg{width:17px;height:17px;fill:none;stroke:var(--green);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.backlink{font-size:13.5px;font-weight:700;color:var(--mid);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.backlink:hover{color:var(--ink)}
+.backlink svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:560px){.cohead .in{height:62px;padding:0 16px}.backlink span{display:none}}
+
+/* ---- launch-discount bar + 10 minute price hold ---- */
+.cotimer{background:var(--red);color:#fff;text-align:center;padding:13px 16px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;position:relative;overflow:hidden;animation:barGlow 2.4s ease-in-out infinite}
+.cotimer::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);transform:translateX(-100%);animation:sheen 3.2s ease-in-out infinite}
+.cotimer .ci{width:19px;height:19px;fill:none;stroke:var(--yellow);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex:none;position:relative;z-index:1}
+.cotimer span{position:relative;z-index:1}
+.cotimer .clock{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.28);border-radius:8px;padding:4px 11px;margin-left:4px;font-variant-numeric:tabular-nums}
+.cotimer .clock b{color:var(--yellow);font-size:16px;letter-spacing:.04em;animation:blink 1s steps(1) infinite}
+@keyframes barGlow{0%,100%{background:var(--red)}50%{background:#D40A0E}}
+@keyframes sheen{0%{transform:translateX(-100%)}55%,100%{transform:translateX(100%)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.45}}
+.cotimer.out{background:#3A3A3A;animation:none}
+.cotimer.out::after{display:none}
+.cotimer.out .ci{stroke:#B9B3AD}
+.cotimer.out .clock{display:none}
+@media(max-width:560px){.cotimer{font-size:13px;padding:11px 12px;gap:8px}.cotimer .clock b{font-size:14.5px}}
+
+/* celebratory discount callout inside the summary */
+.win{background:linear-gradient(135deg,#0E9F4F,#0B8442);border:2px solid var(--ink);border-radius:14px;padding:15px 17px;margin-bottom:18px;display:flex;gap:12px;align-items:flex-start;position:relative;overflow:hidden}
+.win::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.25) 50%,transparent 65%);transform:translateX(-100%);animation:sheen 3.6s ease-in-out .8s infinite}
+.win .we{font-size:24px;line-height:1;flex:none;animation:pop 2.6s ease-in-out infinite}
+@keyframes pop{0%,100%{transform:scale(1) rotate(0)}45%{transform:scale(1.18) rotate(-8deg)}}
+.win > span:last-child{display:block;position:relative;z-index:1}
+.win .wt{display:block;font-size:14.5px;font-weight:800;color:#fff;line-height:1.35}
+.win .ws{display:block;font-size:12.5px;color:rgba(255,255,255,.9);font-weight:600;margin-top:5px;line-height:1.45}
+.win.gone{background:#5A544E}
+.win.gone::after{display:none}
+.win.gone .we{animation:none}
+
+@media(prefers-reduced-motion:reduce){
+  .cotimer,.cotimer::after,.cotimer .clock b,.win::after,.win .we{animation:none}
+  .cotimer::after,.win::after{display:none}
+}
+
+/* layout */
+.cowrap{max-width:1080px;margin:0 auto;padding:44px 24px 80px;display:grid;grid-template-columns:1.12fr .88fr;gap:36px;align-items:start}
+@media(max-width:900px){.cowrap{grid-template-columns:1fr;gap:26px;padding:28px 16px 64px}}
+.panel{background:#fff;border:2.5px solid var(--ink);border-radius:20px;padding:30px 30px 32px}
+@media(max-width:560px){.panel{padding:24px 20px 26px;border-radius:16px}}
+.panel h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:26px;margin-bottom:6px}
+.panel .psub{font-size:14.5px;color:var(--mid);margin-bottom:24px;line-height:1.55}
+
+/* form */
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;font-weight:800;margin-bottom:7px}
+.field label .req{color:var(--red)}
+.field input{width:100%;font:inherit;font-size:16px;padding:14px 16px;border:2px solid var(--line);border-radius:11px;background:var(--cream);transition:border-color .15s,background .15s}
+.field input:focus{outline:none;border-color:var(--ink);background:#fff}
+.field input.bad{border-color:var(--red);background:#FDF3F3}
+.field .err{display:none;font-size:12.5px;color:var(--red);font-weight:700;margin-top:6px}
+.field.showerr .err{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row2{grid-template-columns:1fr;gap:0}}
+
+/* order bump */
+.bump{margin:24px 0 4px;border:2.5px dashed var(--orange);background:var(--orange-t);border-radius:16px;padding:20px;cursor:pointer;display:block;transition:background .15s}
+.bump:hover{background:#FDE8D6}
+.bump.on{background:#fff;border-style:solid}
+.bump .btop{display:flex;gap:13px;align-items:flex-start}
+.bump input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--orange)}
+.bump .btop > span{display:block}
+.bump .bt{display:block;font-size:15.5px;font-weight:800;line-height:1.35}
+.bump .bd{display:block;font-size:14px;color:var(--mid);line-height:1.55;margin-top:7px}
+.bump .bp{display:block;font-size:14px;font-weight:800;margin-top:10px}
+.bump .bp s{color:var(--lt);font-weight:600;margin-right:7px}
+.bump .bp em{font-style:normal;color:var(--orange)}
+.bump .badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--orange);color:#fff;border-radius:99px;padding:4px 10px;margin-bottom:9px}
+
+/* coupon */
+.coupon{display:flex;gap:10px;margin-top:6px}
+.coupon input{flex:1;text-transform:uppercase}
+.coupon button{flex:none;padding:0 20px;border:2px solid var(--ink);background:var(--ink);color:#fff;border-radius:11px;font:inherit;font-weight:800;font-size:14.5px;cursor:pointer}
+.coupon button:hover{background:#000}
+.cmsg{font-size:13px;font-weight:700;margin-top:9px;display:none}
+.cmsg.ok{display:block;color:var(--green)}
+.cmsg.no{display:block;color:var(--red)}
+
+/* summary */
+.summary{position:sticky;top:22px}
+@media(max-width:900px){.summary{position:static}}
+.sumbox{background:var(--ink);color:var(--cream);border:2.5px solid var(--ink);border-radius:20px;padding:28px;box-shadow:9px 9px 0 var(--red)}
+.sumbox h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:21px;color:#fff;margin-bottom:20px}
+.line{display:flex;justify-content:space-between;gap:14px;font-size:14.5px;padding:9px 0;color:#C9C3BD}
+.line b{color:#fff;font-weight:700}
+.line.sub{border-top:1px solid rgba(240,237,234,.16);margin-top:8px;padding-top:14px}
+.line.disc b{color:#4ADE80}
+.line.bumpline{display:none}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid rgba(240,237,234,.22);margin-top:12px;padding-top:16px}
+.total .tl{font-size:15px;font-weight:800;color:#fff}
+.total .tv{font-family:var(--disp);font-size:38px;color:var(--yellow);line-height:1}
+.savings{background:rgba(74,222,128,.13);border:1px solid rgba(74,222,128,.35);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:700;color:#4ADE80;margin-top:14px;text-align:center}
+.paybtn{width:100%;justify-content:center;margin-top:20px;font-size:18px;padding:19px 24px;border-radius:12px}
+.paybtn[disabled]{opacity:.6;pointer-events:none}
+.paynote{font-size:12px;color:#9C958E;text-align:center;margin-top:12px;line-height:1.5}
+.formerr{display:none;background:#FDF3F3;border:2px solid var(--red);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--red-dk);font-weight:600;line-height:1.5;margin-top:16px}
+.formerr.show{display:block}
+
+/* what's included */
+.incl{margin-top:22px;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:22px 24px}
+.incl h4{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+.incl ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.incl li{display:flex;gap:10px;font-size:14px;color:var(--mid);line-height:1.45;align-items:flex-start}
+.incl li svg{width:16px;height:16px;flex:none;margin-top:2px;fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.incl li b{color:var(--ink)}
+
+/* trust */
+.trustrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.tchip{display:inline-flex;align-items:center;gap:7px;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:8px 14px;font-size:12.5px;font-weight:700}
+.tchip svg{width:15px;height:15px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.gtee{margin-top:20px;background:var(--green-t);border:2px solid var(--ink);border-radius:16px;padding:20px 22px;display:flex;gap:15px;align-items:flex-start}
+.gtee .gi{width:44px;height:44px;border-radius:50%;background:var(--green);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex:none;font-family:var(--disp);color:#fff;font-size:17px}
+.gtee h4{font-size:15px;font-weight:800;margin-bottom:5px}
+.gtee p{font-size:13.5px;color:var(--mid);line-height:1.55}
+.paylogos{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+.paylogos span{font-size:11px;font-weight:700;border:1px solid rgba(240,237,234,.28);border-radius:6px;padding:5px 10px;color:#B9B3AD}
+</style>
+</head>
+<body>
+
+<header class="cohead">
+  <div class="in">
+    <a class="logo" href="../index.html"><span class="word">Ad<b>Fyrr</b></span></a>
+    <a class="backlink" href="1300-orders-playbook.html">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span>Back to details</span>
+    </a>
+    <span class="secure">
+      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Secure checkout
+    </span>
+  </div>
+</header>
+
+<div class="cotimer" id="cotimer">
+  <svg class="ci" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>
+  <span id="cotimer-text">🎉 Your ₹199 launch discount is applied — price held for</span>
+  <span class="clock" id="cotimer-clock"><b data-cd>10:00</b></span>
+</div>
+
+<main class="cowrap">
+  <!-- ============ LEFT: details ============ -->
+  <section>
+    <div class="panel">
+      <h2>Where should we send it?</h2>
+      <p class="psub">Your download link and receipt go to this email. Delivery is instant.</p>
+
+      <form id="coform" novalidate>
+        <div class="field" id="f-name">
+          <label for="name">Full name <span class="req">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Sarthak Sharma" required />
+          <span class="err">Please enter your name.</span>
+        </div>
+
+        <div class="row2">
+          <div class="field" id="f-email">
+            <label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
+            <span class="err">Please enter a valid email address.</span>
+          </div>
+          <div class="field" id="f-phone">
+            <label for="phone">Mobile <span class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="9876543210" required />
+            <span class="err">Please enter a 10-digit mobile number.</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:6px">
+          <label for="coupon">Discount code</label>
+          <div class="coupon">
+            <input id="coupon" name="coupon" type="text" placeholder="Enter code" autocomplete="off" />
+            <button type="button" id="applycode">Apply</button>
+          </div>
+          <span class="cmsg" id="cmsg"></span>
+        </div>
+
+        <!-- order bump -->
+        <label class="bump" id="bumpbox" for="bump">
+          <div class="btop">
+            <input type="checkbox" id="bump" name="bump" />
+            <span>
+              <span class="badge">One-time offer</span>
+              <span class="bt">Add: The 60-Minute Ad Launch — guided walkthrough</span>
+              <span class="bd">Watch a full campaign built from scratch in real time — offer, pixel, structure, first five creatives, and the launch itself. The fastest way to turn the playbook into a live campaign tonight.</span>
+              <span class="bp"><s>₹999</s> <em>add for just ₹49</em></span>
+            </span>
+          </div>
+        </label>
+
+        <div class="formerr" id="formerr"></div>
+      </form>
+    </div>
+
+    <div class="gtee">
+      <span class="gi">7</span>
+      <div>
+        <h4>7-day money-back guarantee</h4>
+        <p>Read it, run one structured test, and if it wasn't worth ten times what you paid, email support@adfyrr.com within 7 days for a full refund. You keep the bonuses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RIGHT: summary ============ -->
+  <aside class="summary">
+    <div class="sumbox">
+      <h3>Order summary</h3>
+
+      <div class="win" id="win">
+        <span class="we">🎉</span>
+        <span>
+          <span class="wt" id="win-title">Congratulations — ₹199 launch discount applied!</span>
+          <span class="ws" id="win-sub">Automatically added to your order. Complete checkout before the timer runs out to keep it.</span>
+        </span>
+      </div>
+
+      <div class="line"><span>0 → 1300 Orders Playbook</span><b id="l-base">₹499</b></div>
+      <div class="line bumpline" id="l-bumprow"><span>60-Minute Ad Launch</span><b id="l-bump">₹49</b></div>
+      <div class="line disc" id="l-discrow" style="display:none"><span>Discount <span id="l-code"></span></span><b id="l-disc">−₹100</b></div>
+      <div class="line sub"><span>Instant delivery</span><b>Free</b></div>
+
+      <div class="total">
+        <span class="tl">Total payable</span>
+        <span class="tv" id="l-total">₹499</span>
+      </div>
+
+      <div class="savings" id="l-savings">You're saving ₹19,292 on the full value</div>
+
+      <button class="btn btn-red paybtn" id="paybtn" type="button">
+        Pay ₹499 securely
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+
+      <p class="paynote">You'll pay via Razorpay — UPI, cards, netbanking or wallets.<br>We never see or store your card details.</p>
+      <div class="paylogos"><span>UPI</span><span>VISA</span><span>Mastercard</span><span>RuPay</span><span>Netbanking</span></div>
+    </div>
+
+    <div class="incl">
+      <h4>What you get, instantly</h4>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>199 pages, 13 files</b> — the playbook, vault, library and more</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>100 marketing angles</b> with done-for-you AI prompts</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>100 creative directions</b> with shot lists</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>14 AI skills</b> for Claude &amp; ChatGPT</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>9 scaling SOPs</b> + the numbers pack</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>5 bonuses</b> worth ₹4,795</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Lifetime updates</b> and new angle drops</span></li>
+      </ul>
+      <div class="trustrow">
+        <span class="tchip"><svg viewBox="0 0 24 24" stroke="#0E9F4F"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> 256-bit secure</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" stroke="#2563EB"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg> Instant access</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" stroke="#BB080B"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/></svg> 7-day refund</span>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* Prices shown here are for DISPLAY ONLY — the server recalculates the real
+     amount in lib/pricing.js. Keep them in step, but nothing here is trusted. */
+  var PRICE = {
+    base: 499,
+    bump: 49,
+    coupons: { LAUNCH199: 199, SCALE100: 100 },
+    autoCoupon: 'LAUNCH199',
+    fullValue: 19791
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { coupon: '', bump: false, busy: false };
+
+  var inr = function (n) { return '₹' + n.toLocaleString('en-IN'); };
+
+  /* ---------- totals ---------- */
+  function total() {
+    var t = PRICE.base - (PRICE.coupons[state.coupon] || 0);
+    if (state.bump) t += PRICE.bump;
+    return t;
+  }
+  function render() {
+    var discount = PRICE.coupons[state.coupon] || 0;
+    $('l-bumprow').style.display = state.bump ? 'flex' : 'none';
+    $('l-discrow').style.display = discount ? 'flex' : 'none';
+    $('l-code').textContent = discount ? '(' + state.coupon + ')' : '';
+    $('l-disc').textContent = '−' + inr(discount);
+    var t = total();
+    $('l-total').textContent = inr(t);
+    $('paybtn').firstChild.nodeValue = 'Pay ' + inr(t) + ' securely';
+    $('l-savings').textContent = "You're saving " + inr(PRICE.fullValue - t) + ' on the full value';
+    $('bumpbox').classList.toggle('on', state.bump);
+  }
+
+  /* ---------- validation ---------- */
+  function fieldError(id, bad) {
+    var wrap = $('f-' + id);
+    wrap.classList.toggle('showerr', bad);
+    $(id).classList.toggle('bad', bad);
+    return !bad;
+  }
+  function validate() {
+    var name = $('name').value.trim();
+    var email = $('email').value.trim();
+    var phone = $('phone').value.replace(/\D/g, '');
+    var ok = true;
+    ok = fieldError('name', name.length < 2) && ok;
+    ok = fieldError('email', !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) && ok;
+    ok = fieldError('phone', phone.length < 10) && ok;
+    return ok ? { name: name, email: email, contact: phone } : null;
+  }
+
+  /* ---------- coupon ---------- */
+  $('applycode').addEventListener('click', function () {
+    var code = $('coupon').value.trim().toUpperCase();
+    var msg = $('cmsg');
+    msg.className = 'cmsg';
+    if (!code) return;
+    if (PRICE.coupons[code]) {
+      state.coupon = code;
+      msg.className = 'cmsg ok';
+      msg.textContent = code + ' applied — ' + inr(PRICE.coupons[code]) + ' off.';
+    } else {
+      state.coupon = '';
+      msg.className = 'cmsg no';
+      msg.textContent = "That code isn't valid.";
+    }
+    render();
+  });
+
+  $('bump').addEventListener('change', function () {
+    state.bump = this.checked;
+    render();
+  });
+
+  /* ---------- launch discount + 10-minute price hold --------------------
+     The discount is applied for everyone during the launch. The timer is not
+     decoration: when it reaches zero the discount is genuinely removed and the
+     total goes back to full price, so the "price held for 10:00" claim is true.
+     The deadline lives in sessionStorage, so reloading the page does not hand
+     out a fresh ten minutes within the same visit. */
+  (function () {
+    var KEY = 'adfyrr_hold_1300';
+    var MINUTES = 10;
+
+    // A code in the URL (?coupon=…) wins over the automatic one.
+    var m = location.search.match(/[?&]coupon=([A-Za-z0-9_-]+)/);
+    var urlCode = m ? decodeURIComponent(m[1]).toUpperCase() : '';
+    var code = PRICE.coupons[urlCode] ? urlCode : PRICE.autoCoupon;
+
+    state.coupon = code;
+    $('coupon').value = code;
+    var cmsg = $('cmsg');
+    cmsg.className = 'cmsg ok';
+    cmsg.textContent = code + ' applied — ' + inr(PRICE.coupons[code]) + ' off.';
+    $('win-title').textContent = 'Congratulations — ' + inr(PRICE.coupons[code]) + ' launch discount applied!';
+
+    var end = 0;
+    try { end = parseInt(sessionStorage.getItem(KEY) || '0', 10); } catch (_) {}
+    if (!end) {
+      end = Date.now() + MINUTES * 60 * 1000;
+      try { sessionStorage.setItem(KEY, String(end)); } catch (_) {}
+    }
+
+    var clockEls = document.querySelectorAll('[data-cd]');
+    var bar = $('cotimer');
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    var timer;
+
+    function expire() {
+      clearInterval(timer);
+      state.coupon = '';
+      $('coupon').value = '';
+      cmsg.className = 'cmsg';
+      cmsg.textContent = '';
+      bar.classList.add('out');
+      $('cotimer-text').textContent = 'Your launch discount has expired. Enter a code below if you have one.';
+      var win = $('win');
+      win.classList.add('gone');
+      $('win-title').textContent = 'Launch discount expired';
+      $('win-sub').textContent = 'The ₹' + PRICE.coupons[code] + ' discount is no longer applied to this order.';
+      win.querySelector('.we').textContent = '⌛';
+      render();
+    }
+
+    function tick() {
+      var left = end - Date.now();
+      if (left <= 0) return expire();
+      var mm = Math.floor(left / 60000), ss = Math.floor(left % 60000 / 1000);
+      clockEls.forEach(function (e) { e.textContent = pad(mm) + ':' + pad(ss); });
+    }
+
+    tick();
+    timer = setInterval(tick, 1000);
+  })();
+
+  function fail(text) {
+    state.busy = false;
+    var btn = $('paybtn');
+    btn.disabled = false;
+    render();
+    var box = $('formerr');
+    box.textContent = text;
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* ---------- pay ---------- */
+  $('paybtn').addEventListener('click', function () {
+    if (state.busy) return;
+    $('formerr').classList.remove('show');
+
+    var who = validate();
+    if (!who) {
+      document.querySelector('.showerr').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    state.busy = true;
+    var btn = $('paybtn');
+    btn.disabled = true;
+    btn.firstChild.nodeValue = 'Starting secure checkout… ';
+
+    /* Capture the lead first so an abandoned payment is still reachable.
+       Never block the sale on this. */
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: who.name, email: who.email, contact: who.contact,
+        coupon: state.coupon, bump: state.bump
+      })
+    }).catch(function () { /* ignore */ });
+
+    fetch('/api/create-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        coupon: state.coupon, bump: state.bump,
+        name: who.name, email: who.email, contact: who.contact
+      })
+    })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok || !res.d.orderId) throw new Error(res.d && res.d.error);
+        if (typeof window.Razorpay !== 'function') throw new Error('checkout blocked');
+
+        var rzp = new window.Razorpay({
+          key: res.d.keyId,
+          order_id: res.d.orderId,
+          amount: res.d.amount,
+          currency: res.d.currency,
+          name: 'AdFyrr',
+          description: res.d.description,
+          image: '/assets/favicon.svg',
+          theme: { color: '#BB080B' },
+          prefill: { name: who.name, email: who.email, contact: who.contact },
+          notes: { product: '1300-orders-playbook' },
+          modal: {
+            ondismiss: function () {
+              state.busy = false;
+              btn.disabled = false;
+              render();
+            }
+          },
+          handler: function (resp) {
+            btn.disabled = true;
+            btn.firstChild.nodeValue = 'Confirming your payment… ';
+            fetch('/api/verify-payment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(resp)
+            })
+              .then(function (r) { return r.json(); })
+              .then(function (v) {
+                if (!v.ok) throw new Error(v.error);
+                try {
+                  sessionStorage.setItem('adfyrr_pb1300_receipt', JSON.stringify({
+                    paymentId: v.paymentId, downloadUrl: v.downloadUrl, email: who.email
+                  }));
+                } catch (_) {}
+                window.location.href = 'thank-you.html';
+              })
+              .catch(function () {
+                fail('Your payment went through, but we could not confirm it automatically. '
+                  + 'Payment ID: ' + resp.razorpay_payment_id + ' — please email support@adfyrr.com '
+                  + 'with this ID and we will send your access straight away.');
+              });
+          }
+        });
+
+        rzp.on('payment.failed', function () {
+          fail('That payment did not go through. No money was taken — please try again or use a different method.');
+        });
+
+        rzp.open();
+        state.busy = false;
+        btn.disabled = false;
+        render();
+      })
+      .catch(function () {
+        fail('We could not open the payment window just now. Please try again in a moment, '
+          + 'or email support@adfyrr.com and we will send you a payment link.');
+      });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AdFyrr — Sales admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<style>
+:root{
+  --ink:#111;--cream:#F0EDEA;--white:#fff;--line:#DDD8D3;--mid:#5A544E;--lt:#8C857E;
+  --red:#BB080B;--red-dk:#8A0508;--yellow:#F5ED07;--green:#0E9F4F;--green-t:#E7F6EE;
+  --blue:#2563EB;--orange:#F97316;
+  --body:'Inter',system-ui,sans-serif;--disp:'Anton',Impact,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--cream);color:var(--ink);font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:var(--red)}
+
+/* login */
+.gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.gatebox{background:#fff;border:3px solid var(--ink);border-radius:22px;box-shadow:11px 11px 0 var(--red);max-width:400px;width:100%;padding:38px 34px}
+.gatebox .lg{font-family:'Poppins',var(--body);font-weight:800;font-size:24px;margin-bottom:6px}
+.gatebox .lg b{color:var(--red)}
+.gatebox p{color:var(--mid);font-size:14px;margin-bottom:22px}
+.gatebox input{width:100%;font:inherit;font-size:16px;padding:14px 16px;border:2px solid var(--line);border-radius:11px;background:var(--cream)}
+.gatebox input:focus{outline:none;border-color:var(--ink);background:#fff}
+.gatebox button{width:100%;margin-top:14px;font:inherit;font-weight:800;font-size:16px;padding:15px;border:none;border-radius:11px;background:var(--red);color:#fff;cursor:pointer}
+.gatebox button:hover{background:var(--red-dk)}
+.gerr{display:none;margin-top:12px;font-size:13.5px;color:var(--red);font-weight:700}
+.gerr.show{display:block}
+
+/* shell */
+.app{display:none}
+.app.on{display:block}
+.top{background:#fff;border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:20}
+.top .in{max-width:1180px;margin:0 auto;padding:0 22px;height:66px;display:flex;align-items:center;gap:16px}
+.top .lg{font-family:'Poppins',var(--body);font-weight:800;font-size:20px}
+.top .lg b{color:var(--red)}
+.top .tag{font-size:12px;font-weight:700;background:var(--cream);border:1.5px solid var(--line);border-radius:99px;padding:5px 11px;color:var(--mid)}
+.top .sp{margin-left:auto;display:flex;gap:10px;align-items:center}
+select,.btn2{font:inherit;font-size:13.5px;font-weight:700;padding:9px 13px;border:2px solid var(--ink);border-radius:10px;background:#fff;cursor:pointer;white-space:nowrap}
+.btn2:hover{background:var(--ink);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 22px 70px}
+/* phone: let the header breathe instead of squashing the controls */
+@media(max-width:720px){
+  .top .in{height:auto;padding:12px 16px;flex-wrap:wrap;gap:10px}
+  .top .tag{display:none}
+  .top .sp{margin-left:auto;width:auto}
+  select,.btn2{font-size:12.5px;padding:8px 11px}
+  .wrap{padding:18px 14px 60px}
+  .card .ch{padding:14px 16px}
+  th,td{padding:11px 14px}
+  .stat{padding:15px 16px}
+  .stat .v{font-size:29px}
+}
+@media(max-width:420px){
+  .top .lg{font-size:18px}
+  .top .sp{gap:7px}
+  select,.btn2{font-size:12px;padding:7px 9px}
+}
+
+/* config banner */
+.cfg{border:2px solid var(--ink);border-radius:14px;padding:16px 18px;margin-bottom:22px;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.cfg.ok{background:var(--green-t)}
+.cfg.warn{background:#FEF1E7}
+.cfg.bad{background:#FDF3F3}
+.cfg h3{font-size:14.5px;font-weight:800;margin-bottom:6px}
+.cfg p{font-size:13.5px;color:var(--mid);line-height:1.55}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.pill{font-size:11.5px;font-weight:700;border-radius:99px;padding:5px 11px;border:1.5px solid var(--ink);background:#fff}
+.pill.no{background:#FDF3F3;color:var(--red-dk);border-color:var(--red)}
+.pill.yes{background:var(--green-t);color:#0A6B36;border-color:var(--green)}
+.pill.mode-live{background:var(--red);color:#fff;border-color:var(--red)}
+.pill.mode-test{background:var(--yellow);border-color:var(--ink)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+@media(max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.stats{grid-template-columns:1fr}}
+.stat{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:18px 20px}
+.stat .k{font-size:12px;font-weight:700;color:var(--lt);text-transform:uppercase;letter-spacing:.05em}
+.stat .v{font-family:var(--disp);font-size:34px;line-height:1.1;margin-top:6px}
+.stat .v.red{color:var(--red)}.stat .v.green{color:var(--green)}.stat .v.blue{color:var(--blue)}.stat .v.orange{color:var(--orange)}
+.stat .s{font-size:12.5px;color:var(--mid);margin-top:4px}
+
+/* tables */
+.card{background:#fff;border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.card .ch{padding:16px 20px;border-bottom:2px solid var(--ink);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.card .ch h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:19px}
+.card .ch .n{font-size:12px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:4px 10px}
+.card .ch .exp{margin-left:auto}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--lt);padding:11px 20px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 20px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--cream)}
+.amt{font-weight:800;white-space:nowrap}
+.mono{font-family:var(--mono);font-size:12px;color:var(--mid)}
+.tagx{font-size:11px;font-weight:700;border-radius:99px;padding:3px 9px;border:1.5px solid var(--line);background:var(--cream);white-space:nowrap}
+.tagx.bump{background:#FEF1E7;border-color:var(--orange);color:#9A4A0F}
+.tagx.created{background:#FEF1E7;border-color:var(--orange);color:#9A4A0F}
+.tagx.attempted{background:#FDF3F3;border-color:var(--red);color:var(--red-dk)}
+.empty{padding:40px 20px;text-align:center;color:var(--lt);font-size:14px}
+.copy{cursor:pointer;border:none;background:none;font:inherit;color:var(--red);font-weight:700;font-size:12.5px;text-decoration:underline;padding:0}
+.loading{padding:50px;text-align:center;color:var(--lt)}
+.gerr2{background:#FDF3F3;border:2px solid var(--red);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--red-dk);font-weight:600;margin-bottom:20px;display:none}
+.gerr2.show{display:block}
+.note{font-size:12.5px;color:var(--lt);line-height:1.6;margin-top:14px}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="gate" id="gate">
+  <form class="gatebox" id="gateform">
+    <div class="lg">Ad<b>Fyrr</b> admin</div>
+    <p>Sales dashboard for the Meta Ads Playbook.</p>
+    <input type="password" id="pw" placeholder="Password" autocomplete="current-password" required />
+    <button type="submit" id="gobtn">Sign in</button>
+    <div class="gerr" id="gerr"></div>
+  </form>
+</div>
+
+<!-- ============ APP ============ -->
+<div class="app" id="app">
+  <header class="top">
+    <div class="in">
+      <span class="lg">Ad<b>Fyrr</b></span>
+      <span class="tag">Meta Ads Playbook</span>
+      <div class="sp">
+        <select id="range">
+          <option value="0">Today</option>
+          <option value="1">Last 2 days</option>
+          <option value="6">Last 7 days</option>
+          <option value="29">Last 30 days</option>
+        </select>
+        <button class="btn2" id="refresh">Refresh</button>
+        <button class="btn2" id="logout">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="gerr2" id="err"></div>
+    <div id="cfg"></div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="card">
+      <div class="ch">
+        <h2>Sales</h2><span class="n" id="n-sales">0</span>
+        <button class="btn2 exp" id="exp-sales">Export CSV</button>
+      </div>
+      <div class="tw"><table id="t-sales">
+        <thead><tr><th>Time</th><th>Name</th><th>Email</th><th>Phone</th><th>Method</th><th>Order</th><th>Amount</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <div class="empty" id="e-sales" style="display:none">No sales in this period yet.</div>
+    </div>
+
+    <div class="card">
+      <div class="ch">
+        <h2>Abandoned checkouts</h2><span class="n" id="n-ab">0</span>
+        <button class="btn2 exp" id="exp-ab">Export CSV</button>
+      </div>
+      <div class="tw"><table id="t-ab">
+        <thead><tr><th>Time</th><th>Name</th><th>Email</th><th>Phone</th><th>Stage</th><th>Amount</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <div class="empty" id="e-ab" style="display:none">No abandoned checkouts in this period.</div>
+      <div style="padding:0 20px 18px">
+        <p class="note">These are orders that started checkout but never completed payment. Details come from what the buyer typed on the checkout page, so this is a real follow-up list — a short "still want it?" email here is usually the cheapest revenue you'll find.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var DATA = { sales: [], abandoned: [] };
+
+  var inr = function (p) { return '₹' + (p / 100).toLocaleString('en-IN'); };
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  var when = function (unix) {
+    var d = new Date(unix * 1000);
+    return d.toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', hour12: true });
+  };
+
+  /* ---------- auth ---------- */
+  function showApp(on) {
+    $('gate').style.display = on ? 'none' : 'flex';
+    $('app').classList.toggle('on', on);
+    if (on) load();
+  }
+
+  fetch('/api/admin-login').then(function (r) { return r.json(); })
+    .then(function (d) { showApp(!!d.authed); })
+    .catch(function () { showApp(false); });
+
+  $('gateform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = $('gobtn'), err = $('gerr');
+    err.classList.remove('show');
+    btn.disabled = true; btn.textContent = 'Checking…';
+    fetch('/api/admin-login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: $('pw').value })
+    })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        btn.disabled = false; btn.textContent = 'Sign in';
+        if (!res.ok) { err.textContent = res.d.error || 'Sign-in failed.'; err.classList.add('show'); return; }
+        $('pw').value = '';
+        showApp(true);
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Sign in';
+        err.textContent = 'Could not reach the server.'; err.classList.add('show');
+      });
+  });
+
+  $('logout').addEventListener('click', function () {
+    fetch('/api/admin-login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ logout: true })
+    }).then(function () { location.reload(); });
+  });
+
+  /* ---------- config banner ---------- */
+  function renderConfig(c) {
+    if (!c) return;
+    var missing = [];
+    if (!c.keyId || !c.keySecretSet) missing.push('Razorpay API keys');
+    if (!c.webhookSecretSet) missing.push('webhook secret');
+    if (!c.downloadUrlSet) missing.push('download link');
+
+    var cls = missing.length === 0 ? 'ok' : (!c.keyId || !c.keySecretSet ? 'bad' : 'warn');
+    var head = missing.length === 0
+      ? 'Everything is configured'
+      : 'Not ready yet — missing: ' + missing.join(', ');
+
+    var pill = function (label, ok) {
+      return '<span class="pill ' + (ok ? 'yes' : 'no') + '">' + (ok ? '✓ ' : '✗ ') + label + '</span>';
+    };
+
+    $('cfg').innerHTML =
+      '<div class="cfg ' + cls + '">' +
+        '<div style="flex:1;min-width:240px">' +
+          '<h3>' + esc(head) + '</h3>' +
+          '<p>Keys live in Vercel → Settings → Environment Variables. Change them there, then redeploy — ' +
+          'they are deliberately not editable from this page.</p>' +
+          '<div class="pills">' +
+            (c.mode ? '<span class="pill mode-' + c.mode + '">' + c.mode.toUpperCase() + ' MODE</span>' : '') +
+            (c.keyId ? '<span class="pill">' + esc(c.keyId.slice(0, 12)) + '…</span>' : '') +
+            pill('Key secret', c.keySecretSet) +
+            pill('Webhook secret', c.webhookSecretSet) +
+            pill('Download link', c.downloadUrlSet) +
+            pill('Lead relay', c.leadRelaySet) +
+            pill('Delivery relay', c.fulfilmentRelaySet) +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  /* ---------- render ---------- */
+  function renderStats(t) {
+    if (!t) { $('stats').innerHTML = ''; return; }
+    var cards = [
+      ['Revenue', inr(t.revenue), 'green', t.sales + ' paid order' + (t.sales === 1 ? '' : 's')],
+      ['Sales', t.sales, 'red', 'AOV ' + inr(t.aov)],
+      ['Abandoned', t.abandoned, 'orange', t.started + ' checkouts started'],
+      ['Conversion', t.conversion + '%', 'blue', 'Bump taken by ' + t.bumpTake + '%']
+    ];
+    $('stats').innerHTML = cards.map(function (c) {
+      return '<div class="stat"><div class="k">' + c[0] + '</div>' +
+             '<div class="v ' + c[2] + '">' + c[1] + '</div>' +
+             '<div class="s">' + esc(c[3]) + '</div></div>';
+    }).join('');
+  }
+
+  function renderSales(rows) {
+    var tb = $('t-sales').querySelector('tbody');
+    $('n-sales').textContent = rows.length;
+    $('e-sales').style.display = rows.length ? 'none' : 'block';
+    tb.innerHTML = rows.map(function (s) {
+      return '<tr>' +
+        '<td class="mono">' + esc(when(s.at)) + '</td>' +
+        '<td>' + (esc(s.name) || '<span class="mono">—</span>') + '</td>' +
+        '<td>' + (s.email ? '<a href="mailto:' + esc(s.email) + '">' + esc(s.email) + '</a>' : '<span class="mono">—</span>') + '</td>' +
+        '<td class="mono">' + (esc(s.contact) || '—') + '</td>' +
+        '<td><span class="tagx">' + (esc(s.method) || '—') + '</span>' +
+          (s.bump ? ' <span class="tagx bump">+ bump</span>' : '') + '</td>' +
+        '<td class="mono">' + esc(s.id) + '</td>' +
+        '<td class="amt">' + inr(s.amount) + '</td>' +
+      '</tr>';
+    }).join('');
+  }
+
+  function renderAbandoned(rows) {
+    var tb = $('t-ab').querySelector('tbody');
+    $('n-ab').textContent = rows.length;
+    $('e-ab').style.display = rows.length ? 'none' : 'block';
+    tb.innerHTML = rows.map(function (a) {
+      return '<tr>' +
+        '<td class="mono">' + esc(when(a.at)) + '</td>' +
+        '<td>' + (esc(a.name) || '<span class="mono">—</span>') + '</td>' +
+        '<td>' + (a.email ? '<a href="mailto:' + esc(a.email) + '">' + esc(a.email) + '</a>' : '<span class="mono">—</span>') + '</td>' +
+        '<td class="mono">' + (esc(a.contact) || '—') + '</td>' +
+        '<td><span class="tagx ' + esc(a.status) + '">' +
+          (a.status === 'attempted' ? 'payment failed' : 'never paid') + '</span></td>' +
+        '<td class="amt">' + inr(a.amount) + '</td>' +
+      '</tr>';
+    }).join('');
+  }
+
+  /* ---------- csv ---------- */
+  function csv(rows, cols, name) {
+    if (!rows.length) return;
+    var head = cols.map(function (c) { return c[0]; }).join(',');
+    var body = rows.map(function (r) {
+      return cols.map(function (c) {
+        var v = c[1](r);
+        return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      }).join(',');
+    }).join('\n');
+    var blob = new Blob([head + '\n' + body], { type: 'text/csv;charset=utf-8;' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name + '-' + new Date().toISOString().slice(0, 10) + '.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  $('exp-sales').addEventListener('click', function () {
+    csv(DATA.sales, [
+      ['Time', function (r) { return when(r.at); }], ['Name', function (r) { return r.name; }],
+      ['Email', function (r) { return r.email; }], ['Phone', function (r) { return r.contact; }],
+      ['Method', function (r) { return r.method; }], ['Coupon', function (r) { return r.coupon; }],
+      ['Bump', function (r) { return r.bump ? 'yes' : 'no'; }],
+      ['PaymentId', function (r) { return r.id; }],
+      ['Amount', function (r) { return (r.amount / 100).toFixed(2); }]
+    ], 'adfyrr-sales');
+  });
+
+  $('exp-ab').addEventListener('click', function () {
+    csv(DATA.abandoned, [
+      ['Time', function (r) { return when(r.at); }], ['Name', function (r) { return r.name; }],
+      ['Email', function (r) { return r.email; }], ['Phone', function (r) { return r.contact; }],
+      ['Stage', function (r) { return r.status; }],
+      ['Amount', function (r) { return (r.amount / 100).toFixed(2); }]
+    ], 'adfyrr-abandoned');
+  });
+
+  /* ---------- load ---------- */
+  function load() {
+    var err = $('err');
+    err.classList.remove('show');
+    $('stats').innerHTML = '<div class="loading">Loading…</div>';
+    fetch('/api/admin-data?days=' + $('range').value)
+      .then(function (r) {
+        if (r.status === 401) { showApp(false); throw new Error('signed out'); }
+        return r.json();
+      })
+      .then(function (d) {
+        renderConfig(d.config);
+        if (d.error) { err.textContent = d.error; err.classList.add('show'); }
+        DATA.sales = d.sales || [];
+        DATA.abandoned = d.abandoned || [];
+        renderStats(d.totals);
+        renderSales(DATA.sales);
+        renderAbandoned(DATA.abandoned);
+      })
+      .catch(function (e) {
+        if (e && e.message === 'signed out') return;
+        $('stats').innerHTML = '';
+        err.textContent = 'Could not load data. Check the Vercel function logs.';
+        err.classList.add('show');
+      });
+  }
+
+  $('refresh').addEventListener('click', load);
+  $('range').addEventListener('change', load);
+})();
+</script>
+</body>
+</html>

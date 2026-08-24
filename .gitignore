@@ -1,1 +1,10 @@
 .DS_Store
+
+# Never commit credentials. Razorpay keys live in Vercel env vars;
+# .env is only ever for local testing.
+.env
+.env.*
+!.env.example
+
+# local-only mock of the admin panel (sample data, never deploy)
+admin-preview.html

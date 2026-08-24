@@ -1,12 +1,25 @@
 {
   "rewrites": [
+    { "source": "/access", "destination": "https://adfyrr-portal.vercel.app/access" },
+    { "source": "/access/:path*", "destination": "https://adfyrr-portal.vercel.app/access/:path*" },
+
+    { "source": "/meta-ads-playbook", "destination": "/courses/1300-orders-playbook.html" },
+    { "source": "/meta-ads-playbook/checkout", "destination": "/courses/checkout.html" },
+    { "source": "/meta-ads-playbook/thank-you", "destination": "/courses/thank-you.html" },
+    { "source": "/admin", "destination": "/admin.html" }
+  ],
+  "headers": [
     {
-      "source": "/access",
-      "destination": "https://adfyrr-portal.vercel.app/access"
+      "source": "/admin",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
     },
     {
-      "source": "/access/:path*",
-      "destination": "https://adfyrr-portal.vercel.app/access/:path*"
+      "source": "/api/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
     }
   ]
 }
