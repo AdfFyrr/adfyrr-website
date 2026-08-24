@@ -93,9 +93,16 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: 'Payment could not be verified.' });
     }
 
+    // eventId lets the browser Purchase event be deduplicated against a
+    // server-side Conversions API event later. Derived from the payment id so
+    // it is stable if the buyer refreshes.
+    const eventId = 'pb1300_' + paymentId;
+
     return res.status(200).json({
       ok: true,
       paymentId,
+      amount: payment.amount,
+      eventId,
       downloadUrl: process.env.PLAYBOOK_DOWNLOAD_URL || ''
     });
   } catch (err) {
