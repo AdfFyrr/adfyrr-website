@@ -246,7 +246,7 @@ nav.sitenav{position:sticky;top:0;z-index:50;background:rgba(240,237,234,.88);ba
 
 /* ---------- footer ---------- */
 footer.sitefooter{background:var(--black);color:#9C958E;border-top:1px solid rgba(240,237,234,.14);padding:64px 0 40px;font-size:14.5px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:40px}
+.foot-grid{display:grid;grid-template-columns:2.2fr 1fr 1.2fr;gap:40px}
 @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
 .foot-grid h4{color:var(--cream);font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 16px;font-weight:600}
