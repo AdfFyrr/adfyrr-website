@@ -19,8 +19,9 @@ const crypto = require('node:crypto');
 const { validAmounts } = require('../lib/pricing.js');
 
 // Derived from lib/pricing.js so it can never drift out of sync with what
-// create-order actually charges.
-const VALID_AMOUNTS = validAmounts();
+// create-order actually charges. Computed per request rather than at module
+// load, so clearing TEST_COUPON_CODE takes effect immediately instead of
+// lingering on warm instances.
 
 function safeEqual(a, b) {
   const bufA = Buffer.from(a, 'utf8');
@@ -82,7 +83,7 @@ module.exports = async function handler(req, res) {
     }
 
     const captured = payment.status === 'captured' || payment.status === 'authorized';
-    const amountOk = VALID_AMOUNTS.has(payment.amount);
+    const amountOk = validAmounts().has(payment.amount);
     const orderOk = payment.order_id === orderId;
 
     if (!captured || !amountOk || !orderOk) {
