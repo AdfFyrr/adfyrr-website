@@ -67,7 +67,11 @@
     else window.fbq('track', name, data);
   };
 
-  /* ---- per-page events, driven by a data attribute on <body> ---- */
+  /* ---- per-page events, driven by a data attribute on <body> ----
+     This file loads in <head>, so document.body does not exist yet. Waiting for
+     DOM ready is required — reading it immediately returns null and none of the
+     events below ever fire. */
+  function firePageEvents() {
   var page = document.body && document.body.getAttribute('data-pixel-page');
 
   if (page === 'sales') {
@@ -97,5 +101,12 @@
         try { sessionStorage.setItem(firedKey, receipt.paymentId); } catch (e) {}
       }
     }
+  }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', firePageEvents);
+  } else {
+    firePageEvents();
   }
 })();
