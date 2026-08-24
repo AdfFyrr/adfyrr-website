@@ -157,7 +157,7 @@ body{font-size:16.5px;background:var(--cream)}
 
 <div class="cotimer" id="cotimer">
   <svg class="ci" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>
-  <span id="cotimer-text">🎉 Your ₹200 launch discount is applied — price held for</span>
+  <span id="cotimer-text">🎉 Your ₹50 launch discount is applied — price held for</span>
   <span class="clock" id="cotimer-clock"><b data-cd>10:00</b></span>
 </div>
 
@@ -231,25 +231,25 @@ body{font-size:16.5px;background:var(--cream)}
       <div class="win" id="win">
         <span class="we">🎉</span>
         <span>
-          <span class="wt" id="win-title">Congratulations — ₹200 launch discount applied!</span>
+          <span class="wt" id="win-title">Congratulations — ₹50 launch discount applied!</span>
           <span class="ws" id="win-sub">Automatically added to your order. Complete checkout before the timer runs out to keep it.</span>
         </span>
       </div>
 
-      <div class="line"><span>0 → 1300 Orders Playbook</span><b id="l-base">₹499</b></div>
+      <div class="line"><span>0 → 1300 Orders Playbook</span><b id="l-base">₹299</b></div>
       <div class="line bumpline" id="l-bumprow"><span>60-Minute Ad Launch</span><b id="l-bump">₹49</b></div>
       <div class="line disc" id="l-discrow" style="display:none"><span>Discount <span id="l-code"></span></span><b id="l-disc">−₹100</b></div>
       <div class="line sub"><span>Instant delivery</span><b>Free</b></div>
 
       <div class="total">
         <span class="tl">Total payable</span>
-        <span class="tv" id="l-total">₹499</span>
+        <span class="tv" id="l-total">₹249</span>
       </div>
 
       <div class="savings" id="l-savings">You're saving ₹19,292 on the full value</div>
 
       <button class="btn btn-red paybtn" id="paybtn" type="button">
-        Pay ₹499 securely
+        Pay ₹249 securely
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
 
@@ -285,10 +285,10 @@ body{font-size:16.5px;background:var(--cream)}
   /* Prices shown here are for DISPLAY ONLY — the server recalculates the real
      amount in lib/pricing.js. Keep them in step, but nothing here is trusted. */
   var PRICE = {
-    base: 499,
+    base: 299,
     bump: 49,
-    coupons: { LAUNCH200: 200 },
-    autoCoupon: 'LAUNCH200',
+    coupons: { LAUNCH50: 50 },
+    autoCoupon: 'LAUNCH50',
     fullValue: 19791
   };
 
